@@ -13,6 +13,7 @@ Menu::Menu() = default;
 
 void Menu::load_data(){
     load();
+    cout << transporte.get_grafo().get_nos().size() << endl;
 }
 
 void Menu::load(){

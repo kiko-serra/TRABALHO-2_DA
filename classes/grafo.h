@@ -31,7 +31,7 @@ class Grafo {
         double dist;
     };
     int n;
-    vector<No> nos;
+    vector<No> nos_;
     void dijkstra(int s);
     void bfs(int v);
     void mst(int s);
@@ -41,6 +41,7 @@ public:
     Grafo(int num);
     void init_grafo(int num);
     void addAresta(int origem,int dest, int capacidade, int duracao);
+    vector<No> get_nos() const;
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
     list<int> dijkstra_path(int a, int b);

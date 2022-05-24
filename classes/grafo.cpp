@@ -6,7 +6,7 @@
 
 #define INF (INT_MAX/2)
 
-Grafo::Grafo(int num) : n(num), nos(num + 1) {}
+Grafo::Grafo(int num) : n(num), nos_(num + 1) {}
 
 Grafo::Grafo() = default;
 
@@ -20,18 +20,22 @@ Grafo::Grafo() = default;
 
 void Grafo::addAresta(int origem,int dest, int capacidade, int duracao) {
     if (origem<1 || origem>n || dest<1 || dest>n) return;
-    nos[origem].adj.push_back({dest, capacidade, duracao});
+    nos_[origem].adj.push_back({dest, capacidade, duracao});
 }
 
 void Grafo::init_grafo(int num) {
-    nos.clear();
+    nos_.clear();
     No aux;
     aux.dist=0;
     aux.pred=0;
     aux.visitado=0;
     aux.adj={};
     for (int i = 0; i <= num; ++i) {
-        nos.push_back(aux);
+        nos_.push_back(aux);
     }
     n=num;
+}
+
+vector<Grafo::No> Grafo::get_nos() const {
+    return nos_;
 }

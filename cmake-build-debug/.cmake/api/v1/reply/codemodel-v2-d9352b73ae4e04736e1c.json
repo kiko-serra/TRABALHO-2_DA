@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TRABALHO_2_DA",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TRABALHO_2_DA::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TRABALHO_2_DA-Debug-e3c50f8c9b73254502fc.json",
+					"name" : "TRABALHO_2_DA",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/FranciscoSerra/Desktop/FEUP/2º Ano/2º Semestre/DA/Trabalhos/TRABALHO-2_DA/cmake-build-debug",
+		"source" : "/Users/FranciscoSerra/Desktop/FEUP/2º Ano/2º Semestre/DA/Trabalhos/TRABALHO-2_DA"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
