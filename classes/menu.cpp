@@ -17,30 +17,24 @@ void Menu::load_data(){
 }
 
 void Menu::load(){
-    int origem, destino, capacidade, duracao, vertices;
+    int origem, destino, capacidade, duracao, vertices, ramos;
 
     ifstream file("../Tests_B/in01_b.txt");
-    string line;
+    int numero;
+    istringstream iss= getline(file);
     int contador=0;
-    while(!file.eof()) {
-        getline(file, line);
-
-        string str = "";
-        vector<int> aux;
-
-        for(int i = 0; i <= line.size(); i++) {
-            if(line[i] == ' ' || i == line.size()) {
-                aux.push_back(stoi(str));
-                str = "";
-            }
-            else {
-                str += line[i];
-            }
-        }
-        if (!contador){
-            vertices=aux[0];
+    while(file >> numero){
+        if (!contador)
             transporte.get_grafo().init_grafo(vertices);
+        else if(contador == 1){
+            ramos = numero;
         }
+        else
+            origem=numero;
+        cout << contador << " "<< numero << endl;
+        contador++;
+    }
+/*
         else{
             origem = aux[0];
             destino = aux[1];
@@ -49,7 +43,5 @@ void Menu::load(){
             transporte.get_grafo().addAresta(origem, destino, capacidade, duracao);
         }
         contador++;
-
-
-    }
+*/
 }
