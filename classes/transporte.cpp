@@ -3,3 +3,11 @@
 //
 
 #include "transporte.h"
+
+Transporte::Transporte() {}
+Grafo Transporte::get_grafo() {
+    return graph_;
+}
+int Transporte::get_pessoas() const{
+    return pessoas_;
+}

@@ -3,36 +3,52 @@
 //
 
 #include "menu.h"
+#include "transporte.h"
 #include<iostream>
-#include<fstream>
 #include<string>
 
 using namespace std;
 
-Menu::Menu(Transporte transporte){
-    this->transporte = transporte;
+Menu::Menu() = default;
 
+void Menu::load_data(){
     load();
-
 }
 
 void Menu::load(){
-    Autocarro autocarro;
-    int capacidade, duracao;
-    int vertices, ramos;
+    int origem, destino, capacidade, duracao, vertices;
 
     ifstream file("../Tests_B/in01_b.txt");
     string line;
-
-    if(file.is_open()){
+    int contador=0;
+    while(!file.eof()) {
         getline(file, line);
-        vertices = stoi(line.substr(0,3));
-        ramos = stoi(line.substr(4, ))
 
-        while(!file.eof()){
-            getline(file, line);
+        string str = "";
+        vector<int> aux;
 
-
+        for(int i = 0; i <= line.size(); i++) {
+            if(line[i] == ' ' || i == line.size()) {
+                aux.push_back(stoi(str));
+                str = "";
+            }
+            else {
+                str += line[i];
+            }
         }
+        if (!contador){
+            vertices=aux[0];
+            transporte.get_grafo().init_grafo(vertices);
+        }
+        else{
+            origem = aux[0];
+            destino = aux[1];
+            capacidade = aux[2];
+            duracao = aux[3];
+            transporte.get_grafo().addAresta(origem, destino, capacidade, duracao);
+        }
+        contador++;
+
+
     }
 }

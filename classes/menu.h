@@ -14,9 +14,11 @@ class Menu {
      */
      void load();
 
+
 public:
+    void load_data();
     //Constructor
-    Menu(Transporte transporte);
+    Menu();
 };
 
 

@@ -13,4 +13,17 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/FranciscoSerra/Desktop/FEUP/2º Ano/2º Semestre/DA/Trabalhos/TRABALHO-2_DA/cmake-build-debug
+CMake Error:
+  Running
+
+   '/Applications/CLion.app/Contents/bin/ninja/mac/ninja' '-C' '/Users/FranciscoSerra/Desktop/FEUP/2º Ano/2º Semestre/DA/Trabalhos/TRABALHO-2_DA/cmake-build-debug' '-t' 'recompact'
+
+  failed with:
+
+   ninja: warning: bad deps log signature or version; starting over
+
+  ninja: error: failed recompaction: No such file or directory
+
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

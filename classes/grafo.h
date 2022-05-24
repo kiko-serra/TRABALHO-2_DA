@@ -21,7 +21,6 @@ class Grafo {
     struct Aresta {
         int dest;
         int capacidade;
-        int custo;
         int duracao;
     };
 
@@ -32,7 +31,6 @@ class Grafo {
         double dist;
     };
     int n;
-    bool hasDir;
     vector<No> nos;
     void dijkstra(int s);
     void bfs(int v);
@@ -40,8 +38,9 @@ class Grafo {
 
 public:
     Grafo();
-    Grafo(int nos, bool dir = false);
-    void addAresta(int origem,int dest, int capacidade, int custo, int duracao);
+    Grafo(int num);
+    void init_grafo(int num);
+    void addAresta(int origem,int dest, int capacidade, int duracao);
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
     list<int> dijkstra_path(int a, int b);

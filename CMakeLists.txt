@@ -6,5 +6,12 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(classes)
 
 add_executable(TRABALHO_2_DA
-        classes/autocarro.cpp
-        classes/autocarro.h)
+        main.cpp
+        classes/grafo.cpp
+        classes/grafo.h
+        classes/menu.cpp
+        classes/menu.h
+        classes/transporte.cpp
+        classes/transporte.h
+        classes/minHeap.cpp
+        classes/minHeap.h)
