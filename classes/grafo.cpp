@@ -6,38 +6,40 @@
 
 #define INF (INT_MAX/2)
 
-Grafo::Grafo(int num) : n(num), nos_(num + 1) {}
+Grafo::Grafo(int num) : num_nos_(num), nos_(num + 1) {}
 
 Grafo::Grafo() = default;
 
 /**
  * @brief adds an edge connecting the src node to the dest node with a given weight
  * @param origem the source node
- * @param dest the destination node
+ * @param destino the destination node
  * @param capacidade the line the edge belongs
  * @param duracao the weight given to the edge
  */
-//!!!problems here some
-void Grafo::addAresta(int origem,int dest, int capacidade, int duracao) {
-    if (origem<1 || origem>n || dest<1 || dest>n){
-        cout  << ' tamanho ' << endl;return;}
-    nos_[origem].adj.push_back({dest, capacidade, duracao});
+void Grafo::addAresta(int origem,int destino, int capacidade, int duracao) {
+    if (origem<1 || origem>num_nos_ || destino<1 || destino>num_nos_){
+        //cout  << ' tamanho ' << endl;
+        return;
+        }
+    nos_[origem].adj.push_back({destino, capacidade, duracao});
 
 }
 
 void Grafo::init_grafo(int num) {
+    cout << "numero de vertices verdadeiro "<< num << endl;
     nos_.clear();
-    No aux;
-    aux.dist=0;
-    aux.pred=0;
-    aux.visitado=0;
-    aux.adj={};
-    for (int i = 0; i <= num; ++i) {
+    No aux{{}, 1, 0, 0};
+    for (int i = 0; i <= num; i++) {
         nos_.push_back(aux);
     }
-    n=num;
+    cout << "no qualquer" << nos_[num].anterior_ << endl;
+    cout << "quantos nos existem " << nos_.size() << " " << num_nos_<< endl;
 }
 
 vector<Grafo::No> Grafo::get_nos() const {
     return nos_;
 }
+int Grafo::get_num_nos() const{
+    return num_nos_;
+};

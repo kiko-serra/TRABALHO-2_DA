@@ -19,18 +19,18 @@ using namespace std;
 
 class Grafo {
     struct Aresta {
-        int dest;
-        int capacidade;
-        int duracao;
+        int destino_;
+        int capacidade_;
+        int duracao_;
     };
 
     struct No {
         vector<Aresta> adj; // The list of outgoing edges (to adjacent nodes)
-        int pred;
-        bool visitado;
-        double dist;
+        int anterior_;
+        bool visitado_;
+        int dist_;
     };
-    int n;
+    int num_nos_;
     vector<No> nos_;
     void dijkstra(int s);
     void bfs(int v);
@@ -39,9 +39,10 @@ class Grafo {
 public:
     Grafo();
     Grafo(int num);
-    void init_grafo(int num);
-    void addAresta(int origem,int dest, int capacidade, int duracao);
+    void init_grafo(int num) ;
+    void addAresta(int origem,int destino, int capacidade, int duracao);
     vector<No> get_nos() const;
+    int get_num_nos() const;
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
     list<int> dijkstra_path(int a, int b);

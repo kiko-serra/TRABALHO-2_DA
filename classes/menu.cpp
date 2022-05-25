@@ -11,20 +11,25 @@ using namespace std;
 
 Menu::Menu() = default;
 
-void Menu::load_data(){
-    load();
-    cout << transporte.get_grafo().get_nos().size() << endl;
+Transporte Menu::get_transporte() const {
+    return transporte_;
 }
-
-void Menu::load(){
+Grafo Menu::load(){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
     ifstream file("../Tests_B/in01_b.txt");
     string line;
     getline(file, line);
     istringstream iss(line);
-    iss >> vertices >>ramos;
-    transporte.get_grafo().init_grafo(vertices);
+    //get first elements in file -> nodes and paths
+    iss >> vertices >> ramos;
+    Grafo grafo = get_transporte().get_grafo();
+
+    grafo.init_grafo(vertices);
+    //tests
+    cout << " vertices " << vertices << endl;
+    cout << "ramos " << ramos << endl;
+    cout << "size " <<grafo.get_nos().size() << endl;
 
     while(file >> numero){
         switch (contador) {
@@ -32,14 +37,14 @@ void Menu::load(){
                 origem = numero;
                 break;
             case 1:
-                destino=numero;
+                destino = numero;
                 break;
             case 2:
-                capacidade=numero;
+                capacidade = numero;
                 break;
             case 3:
-                duracao=numero;
-                transporte.get_grafo().addAresta(origem, destino, capacidade, duracao);
+                duracao = numero;
+                grafo.addAresta(origem, destino, capacidade, duracao);
                 //cout << origem << " " << destino << " " << capacidade << " " << duracao << endl;
                 contador=-1;
                 break;
@@ -48,12 +53,18 @@ void Menu::load(){
         }
         contador++;
     }
-    cout << "ola"<< endl;
-    cout << transporte.get_grafo().get_nos().size() << endl;
-    for (int i = 0; i < transporte.get_grafo().get_nos().size(); i++) {
-        cout << "asdf" << endl;
-        for (int j = 0; j < transporte.get_grafo().get_nos().at(i).adj.size(); j++) {
-            cout << transporte.get_grafo().get_nos().at(i).adj.at(j).dest << ' ' << transporte.get_grafo().get_nos().at(i).adj.at(j).capacidade<< ' '<< transporte.get_grafo().get_nos().at(i).adj.at(j).duracao << endl;
+    cout << "antes do for tem "<< grafo.get_nos().size() << endl;
+    for (int i = 1; i < grafo.get_nos().size(); i++) {
+        cout << "entrou 1º " <<i << endl;
+        for (int j = 0; j < grafo.get_nos()[i].adj.size(); j++) {
+            cout << grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
         }
     }
+    return grafo;
 }
+
+void Menu::load_data(){
+    Grafo grafo = load();
+    cout << "nos finais "<<grafo.get_nos().size() << " " <<grafo.get_num_nos()<<endl;
+}
+
