@@ -17,7 +17,7 @@ Grafo::Grafo() = default;
  * @param capacidade the line the edge belongs
  * @param duracao the weight given to the edge
  */
-
+//!!!problems here some
 void Grafo::addAresta(int origem,int dest, int capacidade, int duracao) {
     if (origem<1 || origem>n || dest<1 || dest>n){
         cout  << ' tamanho ' << endl;return;}
