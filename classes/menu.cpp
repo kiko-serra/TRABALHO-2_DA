@@ -17,31 +17,43 @@ void Menu::load_data(){
 }
 
 void Menu::load(){
-    int origem, destino, capacidade, duracao, vertices, ramos;
+    int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
     ifstream file("../Tests_B/in01_b.txt");
-    int numero;
-    istringstream iss= getline(file);
-    int contador=0;
+    string line;
+    getline(file, line);
+    istringstream iss(line);
+    iss >> vertices >>ramos;
+    transporte.get_grafo().init_grafo(vertices);
+
     while(file >> numero){
-        if (!contador)
-            transporte.get_grafo().init_grafo(vertices);
-        else if(contador == 1){
-            ramos = numero;
+        switch (contador) {
+            case 0:
+                origem = numero;
+                break;
+            case 1:
+                destino=numero;
+                break;
+            case 2:
+                capacidade=numero;
+                break;
+            case 3:
+                duracao=numero;
+                transporte.get_grafo().addAresta(origem, destino, capacidade, duracao);
+                //cout << origem << " " << destino << " " << capacidade << " " << duracao << endl;
+                contador=-1;
+                break;
+            default:
+                break;
         }
-        else
-            origem=numero;
-        cout << contador << " "<< numero << endl;
         contador++;
     }
-/*
-        else{
-            origem = aux[0];
-            destino = aux[1];
-            capacidade = aux[2];
-            duracao = aux[3];
-            transporte.get_grafo().addAresta(origem, destino, capacidade, duracao);
+    cout << "ola"<< endl;
+    cout << transporte.get_grafo().get_nos().size() << endl;
+    for (int i = 0; i < transporte.get_grafo().get_nos().size(); i++) {
+        cout << "asdf" << endl;
+        for (int j = 0; j < transporte.get_grafo().get_nos().at(i).adj.size(); j++) {
+            cout << transporte.get_grafo().get_nos().at(i).adj.at(j).dest << ' ' << transporte.get_grafo().get_nos().at(i).adj.at(j).capacidade<< ' '<< transporte.get_grafo().get_nos().at(i).adj.at(j).duracao << endl;
         }
-        contador++;
-*/
+    }
 }

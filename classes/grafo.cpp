@@ -19,8 +19,10 @@ Grafo::Grafo() = default;
  */
 
 void Grafo::addAresta(int origem,int dest, int capacidade, int duracao) {
-    if (origem<1 || origem>n || dest<1 || dest>n) return;
+    if (origem<1 || origem>n || dest<1 || dest>n){
+        cout  << ' tamanho ' << endl;return;}
     nos_[origem].adj.push_back({dest, capacidade, duracao});
+
 }
 
 void Grafo::init_grafo(int num) {
