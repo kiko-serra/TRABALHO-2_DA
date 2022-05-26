@@ -23,9 +23,10 @@ Grafo Menu::load(){
     istringstream iss(line);
     //get first elements in file -> nodes and paths
     iss >> vertices >> ramos;
-    Grafo grafo = get_transporte().get_grafo();
-
+    Grafo grafo;
     grafo.init_grafo(vertices);
+
+    cout << grafo.get_num_nos() << " isto é o numero de nos " << endl;
     //tests
     cout << " vertices " << vertices << endl;
     cout << "ramos " << ramos << endl;
@@ -54,10 +55,12 @@ Grafo Menu::load(){
         contador++;
     }
     cout << "antes do for tem "<< grafo.get_nos().size() << endl;
-    for (int i = 1; i < grafo.get_nos().size(); i++) {
-        cout << "entrou 1º " <<i << endl;
+    for (int i = 0; i < grafo.get_nos().size(); i++) {
+        //cout << "entrou 1º " <<i << endl;
+        //cout <<"size adj "<< grafo.get_nos()[i].adj.size() << " "<< endl;
         for (int j = 0; j < grafo.get_nos()[i].adj.size(); j++) {
-            cout << grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
+            cout << "entrou segindo for " << endl;
+            cout << i << " "<<grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
         }
     }
     return grafo;

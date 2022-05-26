@@ -33,7 +33,8 @@ void Grafo::init_grafo(int num) {
     for (int i = 0; i <= num; i++) {
         nos_.push_back(aux);
     }
-    cout << "no qualquer" << nos_[num].anterior_ << endl;
+    num_nos_=(int)nos_.size();
+    cout << "no qualquer " << nos_[num].anterior_ << endl;
     cout << "quantos nos existem " << nos_.size() << " " << num_nos_<< endl;
 }
 
