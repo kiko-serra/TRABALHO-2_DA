@@ -11,13 +11,14 @@ using namespace std;
 
 Menu::Menu() = default;
 
-Transporte Menu::get_transporte() const {
-    return transporte_;
-}
+/**
+ * @brief carrega e cria um grafo consuante um ficheiro lido
+ * @return grafo populado
+ */
 Grafo Menu::load(){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
-    ifstream file("../Tests_B/in01_b.txt");
+    ifstream file("../Tests_B/in03_b.txt");
     string line;
     getline(file, line);
     istringstream iss(line);
@@ -28,9 +29,10 @@ Grafo Menu::load(){
 
     cout << grafo.get_num_nos() << " isto é o numero de nos " << endl;
     //tests
-    cout << " vertices " << vertices << endl;
+    /*cout << " vertices " << vertices << endl;
     cout << "ramos " << ramos << endl;
     cout << "size " <<grafo.get_nos().size() << endl;
+    */
 
     while(file >> numero){
         switch (contador) {
@@ -54,18 +56,19 @@ Grafo Menu::load(){
         }
         contador++;
     }
-    cout << "antes do for tem "<< grafo.get_nos().size() << endl;
+    //imprime as arestas do grafo
     for (int i = 0; i < grafo.get_nos().size(); i++) {
-        //cout << "entrou 1º " <<i << endl;
-        //cout <<"size adj "<< grafo.get_nos()[i].adj.size() << " "<< endl;
         for (int j = 0; j < grafo.get_nos()[i].adj.size(); j++) {
-            cout << "entrou segindo for " << endl;
-            cout << i << " "<<grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
+            //cout << "entrou segundo for " << endl;
+            //cout << i << " "<<grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
         }
     }
     return grafo;
 }
 
+/**
+ * @brief chame a funcao e guarda o grafo
+ */
 void Menu::load_data(){
     Grafo grafo = load();
     cout << "nos finais "<<grafo.get_nos().size() << " " <<grafo.get_num_nos()<<endl;

@@ -7,7 +7,6 @@
 
 #include "transporte.h"
 class Menu {
-    Transporte transporte_;
 
     /**
      * Reach files for test and fill graph
@@ -17,7 +16,6 @@ class Menu {
 
 public:
     Grafo load();
-    Transporte get_transporte() const;
     void load_data();
     //Constructor
     Menu();
