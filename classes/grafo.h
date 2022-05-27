@@ -39,10 +39,36 @@ class Grafo {
 public:
     Grafo();
     Grafo(int num);
-    void init_grafo(int num) ;
+
+    /**
+    * @brief inicializa o grafo com um certo valor de nos
+    * @param num numero de nos lido do ficheiro
+    */
+    void init_grafo(int num);
+
+    /**
+    * @brief adiciona uma aresta que liga o no de origem ao de destino com uma capacidade e duracao
+    * @param origem o no de origem
+    * @param destino o no de destino
+    * @param capacidade a capacidade que a aresta tem para transporte
+    * @param duracao a duracao de transporte por esta aresta
+    */
     void addAresta(int origem,int destino, int capacidade, int duracao);
+
+    /**
+    * @brief Getter para facil acesso ao vetor de nos do grafo
+    * @return vetor de nos do grafo
+    */
     vector<No> get_nos() const;
+
+
+    /**
+    * @brief facil acesso ao numero de nos do grafo
+    * @return inteiro com o numero de nos do grafo
+    */
     int get_num_nos() const;
+
+
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
     list<int> dijkstra_path(int a, int b);

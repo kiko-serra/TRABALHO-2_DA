@@ -11,10 +11,7 @@ using namespace std;
 
 Menu::Menu() = default;
 
-/**
- * @brief carrega e cria um grafo consuante um ficheiro lido
- * @return grafo populado
- */
+
 Grafo Menu::load(){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
@@ -66,11 +63,24 @@ Grafo Menu::load(){
     return grafo;
 }
 
-/**
- * @brief chame a funcao e guarda o grafo
- */
+
 void Menu::load_data(){
     Grafo grafo = load();
     cout << "nos finais "<<grafo.get_nos().size() << " " <<grafo.get_num_nos()<<endl;
+}
+
+int Menu::maxGrupo() const {
+    int res;
+
+    //implementacao dos slides pag 4
+    for (No &v : grafo.get_nos()) {
+        v.anterior_ = NULL;
+        //!! duvida no cap[s]<- 00 pois a nossa capacidade esta guardada na aresta e nao no nó
+        v.
+    }
+
+
+    
+    return res;
 }
 

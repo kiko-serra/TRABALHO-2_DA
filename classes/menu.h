@@ -15,8 +15,21 @@ class Menu {
 
 
 public:
+
+    /**
+    * @brief carrega e cria um grafo consuante um ficheiro lido
+    * @return grafo populado
+    */
     Grafo load();
+
+    /**
+    * @brief chama a funcao e guarda o grafo
+    */
+
     void load_data();
+
+    //grafo vai como parametro ou como referencia?
+    int maxGrupo() const;
     //Constructor
     Menu();
 };
