@@ -63,14 +63,13 @@ int Grafo::maxGrupo() {
         nos_[v].visitado_=true;
         for(auto &w : nos_[v].adj){
             if (min(nos_[v].dist_, w.capacidade_) > nos_[w.destino_].dist_){
-                cout << "jerjgjerg" << endl;
                 nos_[w.destino_].dist_=min(nos_[v].dist_, w.capacidade_);
                 nos_[w.destino_].anterior_ = v;
                 heap.increaseKey(w.destino_,nos_[w.destino_].dist_);
             }
         }
     }
-    int node = num_nos_;
+    int node = num_nos_-1;
     cout << "nos: " << nos_[node].anterior_ << endl;
     int capacity = INT_MAX;
     while(nos_[node].anterior_ != -1 && node != 1){

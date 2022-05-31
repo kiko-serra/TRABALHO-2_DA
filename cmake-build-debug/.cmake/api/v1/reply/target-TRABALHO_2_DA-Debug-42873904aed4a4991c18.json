@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TRABALHO_2_DA"
+			"path" : "TRABALHO_2_DA.exe"
+		},
+		{
+			"path" : "TRABALHO_2_DA.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/FranciscoSerra/Desktop/FEUP/2º Ano/2º Semestre/DA/Trabalhos/TRABALHO-2_DA/classes"
+					"path" : "C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes"
 				}
 			],
 			"language" : "CXX",
@@ -86,12 +89,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "TRABALHO_2_DA",
-	"nameOnDisk" : "TRABALHO_2_DA",
+	"nameOnDisk" : "TRABALHO_2_DA.exe",
 	"paths" : 
 	{
 		"build" : ".",
