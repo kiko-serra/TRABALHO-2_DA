@@ -26,10 +26,8 @@ public:
     * @brief chama a funcao e guarda o grafo
     */
 
-    void load_data();
+    void program();
 
-    //grafo vai como parametro ou como referencia?
-    int maxGrupo() const;
     //Constructor
     Menu();
 };

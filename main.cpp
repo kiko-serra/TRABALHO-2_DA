@@ -2,7 +2,7 @@
 #include"menu.h"
 int main() {
     Menu menu;
-    menu.load_data();
+    menu.program();
 
     return 0;
 }

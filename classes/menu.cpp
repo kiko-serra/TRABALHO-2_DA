@@ -15,7 +15,7 @@ Menu::Menu() = default;
 Grafo Menu::load(){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
-    ifstream file("../Tests_B/in03_b.txt");
+    ifstream file("../Tests_B/in01_b.txt");
     string line;
     getline(file, line);
     istringstream iss(line);
@@ -64,23 +64,12 @@ Grafo Menu::load(){
 }
 
 
-void Menu::load_data(){
+void Menu::program(){
     Grafo grafo = load();
+
+    cout <<"Cenario 1.1: " << grafo.maxGrupo() << endl;
     cout << "nos finais "<<grafo.get_nos().size() << " " <<grafo.get_num_nos()<<endl;
 }
 
-int Menu::maxGrupo() const {
-    int res;
 
-    //implementacao dos slides pag 4
-    for (No &v : grafo.get_nos()) {
-        v.anterior_ = NULL;
-        //!! duvida no cap[s]<- 00 pois a nossa capacidade esta guardada na aresta e nao no nó
-        v.
-    }
-
-
-    
-    return res;
-}
 

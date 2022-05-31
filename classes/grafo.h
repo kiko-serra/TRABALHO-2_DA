@@ -5,7 +5,7 @@
 #ifndef TRABALHO_2_DA_GRAFO_H
 #define TRABALHO_2_DA_GRAFO_H
 
-#include "minHeap.h"
+#include "maxHeap.h"
 #include <vector>
 #include <list>
 #include <iostream>
@@ -67,6 +67,8 @@ public:
     * @return inteiro com o numero de nos do grafo
     */
     int get_num_nos() const;
+
+    int maxGrupo();
 
 
     double dijkstra_distance(int a, int b);
