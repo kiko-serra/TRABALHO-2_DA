@@ -152,6 +152,30 @@ classes/grafo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.s
 .PHONY : classes/grafo.cpp.s
 
+classes/main.obj: classes/main.cpp.obj
+.PHONY : classes/main.obj
+
+# target to build an object file
+classes/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.obj
+.PHONY : classes/main.cpp.obj
+
+classes/main.i: classes/main.cpp.i
+.PHONY : classes/main.i
+
+# target to preprocess a source file
+classes/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.i
+.PHONY : classes/main.cpp.i
+
+classes/main.s: classes/main.cpp.s
+.PHONY : classes/main.s
+
+# target to generate assembly for a file
+classes/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.s
+.PHONY : classes/main.cpp.s
+
 classes/maxHeap.obj: classes/maxHeap.cpp.obj
 .PHONY : classes/maxHeap.obj
 
@@ -260,6 +284,9 @@ help:
 	@echo ... classes/grafo.obj
 	@echo ... classes/grafo.i
 	@echo ... classes/grafo.s
+	@echo ... classes/main.obj
+	@echo ... classes/main.i
+	@echo ... classes/main.s
 	@echo ... classes/maxHeap.obj
 	@echo ... classes/maxHeap.i
 	@echo ... classes/maxHeap.s

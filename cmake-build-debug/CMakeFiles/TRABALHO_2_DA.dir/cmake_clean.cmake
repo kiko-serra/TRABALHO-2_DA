@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.obj"
   "CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.obj.d"
+  "CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.obj"
+  "CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.obj.d"
   "CMakeFiles/TRABALHO_2_DA.dir/classes/maxHeap.cpp.obj"
   "CMakeFiles/TRABALHO_2_DA.dir/classes/maxHeap.cpp.obj.d"
   "CMakeFiles/TRABALHO_2_DA.dir/classes/menu.cpp.obj"

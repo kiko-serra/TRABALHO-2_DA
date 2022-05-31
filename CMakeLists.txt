@@ -11,7 +11,5 @@ add_executable(TRABALHO_2_DA
         classes/grafo.h
         classes/menu.cpp
         classes/menu.h
-        classes/transporte.cpp
-        classes/transporte.h
         classes/maxHeap.cpp
-        classes/maxHeap.h)
+        classes/maxHeap.h classes/main.cpp)

@@ -70,17 +70,18 @@ int Grafo::maxGrupo() {
         }
     }
     int node = num_nos_-1;
-    cout << "nos: " << nos_[node].anterior_ << endl;
     int capacity = INT_MAX;
     while(nos_[node].anterior_ != -1 && node != 1){
         int pos_anterior = nos_[node].anterior_;
         for (auto &aresta : nos_[pos_anterior].adj) {
             if (aresta.destino_==node){
+                cout << node << " <- ";
                 if(capacity > aresta.capacidade_)
                     capacity=aresta.capacidade_;
             }
         }
         node= nos_[node].anterior_;
     }
+    cout << node << endl;
     return capacity;
 }

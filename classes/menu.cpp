@@ -15,7 +15,7 @@ Menu::Menu() = default;
 Grafo Menu::load(){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
-    ifstream file("../Tests_B/in01_b.txt");
+    ifstream file("../Tests_B/in11_b.txt");
     string line;
     getline(file, line);
     istringstream iss(line);
