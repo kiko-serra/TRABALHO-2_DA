@@ -28,6 +28,8 @@ public:
 
     void ex1_1();
 
+    void ex1_2();
+
     string escolhaFicheiroTeste(int num);
 
     void escolhaFuncoes(char opcoes);

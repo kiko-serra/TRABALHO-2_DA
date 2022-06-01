@@ -69,7 +69,16 @@ void Menu::ex1_1(){
     cin >> valor;
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     int maxGrupo = grafo.maxGrupo();
-    cout <<"Cenario 1.1: " << maxGrupo << endl;
+    cout <<"Cenario 1.1: " << maxGrupo <<" é a capacidade máxima"<< endl;
+}
+
+void Menu::ex1_2(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    int maxGrupo = grafo.maximiza_capacidade_caminhos_multiplos();
+    cout <<"Cenario 1.2: " << maxGrupo <<" é a capacidade máxima"<< endl;
 }
 
 void Menu::printCenarios(){
@@ -92,7 +101,7 @@ void Menu::escolhaFuncoes(char opcao){
             ex1_1();
             break;
         case '2':
-            
+            ex1_2();
             break;
         case '3':
             break;
@@ -142,6 +151,9 @@ string Menu::escolhaFicheiroTeste(int num){
             break;
         case 10:
             teste = "../Tests_B/in10_b.txt";
+            break;
+        case 11:
+            teste = "../Tests_B/in11_b.txt";
             break;
         default:
             cout << "Opcao invalida" << endl;

@@ -72,6 +72,10 @@ public:
 
     int maxGrupo();
 
+    int maximiza_capacidade_caminhos_multiplos();
+
+    void inicializa_nos();
+
     list<int> get_caminho(int origem, int destino);
 
     void print_grafo();

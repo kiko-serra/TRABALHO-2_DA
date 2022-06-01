@@ -39,14 +39,8 @@ int Grafo::get_num_nos() const{
 };
 
 int Grafo::maxGrupo() {
-    for(auto &n: nos_) {
-        n.visitado_ = false;
-        n.anterior_ = -1;
-        n.dist_ = 0;
-    }
 
-    nos_[0].visitado_ = true;
-    nos_[1].dist_ = INT_MAX;
+    inicializa_nos();
 
     MaxHeap<int, int> heap(num_nos_, -5);
     //if -5 -> not found
@@ -69,6 +63,42 @@ int Grafo::maxGrupo() {
     return nos_[num_nos_-1].dist_;
 }
 
+int Grafo::maximiza_capacidade_caminhos_multiplos() {
+    inicializa_nos();
+    MaxHeap<int, int> heap(num_nos_, -5);
+    //if -5 -> not found
+    for (int i = 1; i <=num_nos_; i++) {
+        heap.insert(i, nos_[i].dist_);
+    }
+
+    while(heap.getSize() != 0){
+        int v = heap.removeMax();
+        nos_[v].visitado_=true;
+        for(auto &w : nos_[v].adj){
+            if(min(nos_[v].dist_, w.capacidade_) == nos_[w.destino_].dist_){
+                
+            }
+            else if (min(nos_[v].dist_, w.capacidade_) > nos_[w.destino_].dist_){
+                nos_[w.destino_].dist_=min(nos_[v].dist_, w.capacidade_);
+                nos_[w.destino_].anterior_ = v;
+                heap.increaseKey(w.destino_,nos_[w.destino_].dist_);
+            }
+        }
+    }
+    return nos_[num_nos_-1].dist_;
+}
+
+
+void Grafo::inicializa_nos(){
+    for(auto &n: nos_) {
+        n.visitado_ = false;
+        n.anterior_ = -1;
+        n.dist_ = 0;
+    }
+
+    nos_[0].visitado_ = true;
+    nos_[1].dist_ = INT_MAX;
+}
 
 list<int> Grafo::get_caminho(int origem, int destino) {
     list<int> caminho;
