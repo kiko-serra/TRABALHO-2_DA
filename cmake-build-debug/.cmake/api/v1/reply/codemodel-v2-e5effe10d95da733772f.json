@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "TRABALHO_2_DA",
+					"name" : "TRABALHO-2_DA",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "TRABALHO_2_DA::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TRABALHO_2_DA-Debug-605bedbdfacfea6a9bcb.json",
-					"name" : "TRABALHO_2_DA",
+					"id" : "TRABALHO-2_DA::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TRABALHO-2_DA-Debug-ef0f8d48c6e83c019e0b.json",
+					"name" : "TRABALHO-2_DA",
 					"projectIndex" : 0
 				}
 			]

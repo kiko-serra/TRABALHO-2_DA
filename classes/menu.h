@@ -7,13 +7,6 @@
 
 #include "grafo.h"
 class Menu {
-
-    /**
-     * Reach files for test and fill graph
-     */
-
-
-
 public:
 
     /**

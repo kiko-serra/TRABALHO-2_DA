@@ -70,8 +70,7 @@ void Menu::ex2_1(){
     cout << "qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
     Grafo grafo = load(escolhaFicheiroTeste(valor));
-    grafo.inicializa_nos();
-    grafo.unweighted_shortest_path();
+    grafo.edmunds_karp(0, grafo.get_num_nos()-1);
     grafo.get_caminho(0, grafo.get_num_nos()-1);
 }
 

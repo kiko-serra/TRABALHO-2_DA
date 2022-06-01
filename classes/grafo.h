@@ -81,6 +81,14 @@ public:
 
     void bfs(int v);
 
+    void edmunds_karp(int s, int t);
+
+    Grafo residual_grid(int s, int t);
+
+    int procura_no(int u, int v);
+
+
+
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
     list<int> dijkstra_path(int a, int b);

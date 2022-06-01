@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TRABALHO_2_DA.exe"
+			"path" : "TRABALHO-2_DA.exe"
 		},
 		{
-			"path" : "TRABALHO_2_DA.pdb"
+			"path" : "TRABALHO-2_DA.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -70,14 +70,13 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				3,
-				5,
-				7
+				2,
+				4,
+				6
 			]
 		}
 	],
-	"id" : "TRABALHO_2_DA::@6890427a1f51a3e7e1df",
+	"id" : "TRABALHO-2_DA::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -97,8 +96,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "TRABALHO_2_DA",
-	"nameOnDisk" : "TRABALHO_2_DA.exe",
+	"name" : "TRABALHO-2_DA",
+	"nameOnDisk" : "TRABALHO-2_DA.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -111,30 +110,23 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				3,
-				5,
-				7
+				2,
+				4,
+				6
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2,
-				4,
-				6
+				1,
+				3,
+				5
 			]
 		}
 	],
 	"sources" : 
 	[
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
-			"sourceGroupIndex" : 0
-		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,

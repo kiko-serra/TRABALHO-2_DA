@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TRABALHO_2_DA
+# Target rules for targets named TRABALHO-2_DA
 
 # Build rule for target.
-TRABALHO_2_DA: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TRABALHO_2_DA
-.PHONY : TRABALHO_2_DA
+TRABALHO-2_DA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TRABALHO-2_DA
+.PHONY : TRABALHO-2_DA
 
 # fast build rule for target.
-TRABALHO_2_DA/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/build
-.PHONY : TRABALHO_2_DA/fast
+TRABALHO-2_DA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/build
+.PHONY : TRABALHO-2_DA/fast
 
 classes/grafo.obj: classes/grafo.cpp.obj
 .PHONY : classes/grafo.obj
 
 # target to build an object file
 classes/grafo.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo.cpp.obj
 .PHONY : classes/grafo.cpp.obj
 
 classes/grafo.i: classes/grafo.cpp.i
@@ -141,7 +141,7 @@ classes/grafo.i: classes/grafo.cpp.i
 
 # target to preprocess a source file
 classes/grafo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo.cpp.i
 .PHONY : classes/grafo.cpp.i
 
 classes/grafo.s: classes/grafo.cpp.s
@@ -149,7 +149,7 @@ classes/grafo.s: classes/grafo.cpp.s
 
 # target to generate assembly for a file
 classes/grafo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/grafo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo.cpp.s
 .PHONY : classes/grafo.cpp.s
 
 classes/main.obj: classes/main.cpp.obj
@@ -157,7 +157,7 @@ classes/main.obj: classes/main.cpp.obj
 
 # target to build an object file
 classes/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/main.cpp.obj
 .PHONY : classes/main.cpp.obj
 
 classes/main.i: classes/main.cpp.i
@@ -165,7 +165,7 @@ classes/main.i: classes/main.cpp.i
 
 # target to preprocess a source file
 classes/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/main.cpp.i
 .PHONY : classes/main.cpp.i
 
 classes/main.s: classes/main.cpp.s
@@ -173,7 +173,7 @@ classes/main.s: classes/main.cpp.s
 
 # target to generate assembly for a file
 classes/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/main.cpp.s
 .PHONY : classes/main.cpp.s
 
 classes/maxHeap.obj: classes/maxHeap.cpp.obj
@@ -181,7 +181,7 @@ classes/maxHeap.obj: classes/maxHeap.cpp.obj
 
 # target to build an object file
 classes/maxHeap.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/maxHeap.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/maxHeap.cpp.obj
 .PHONY : classes/maxHeap.cpp.obj
 
 classes/maxHeap.i: classes/maxHeap.cpp.i
@@ -189,7 +189,7 @@ classes/maxHeap.i: classes/maxHeap.cpp.i
 
 # target to preprocess a source file
 classes/maxHeap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/maxHeap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/maxHeap.cpp.i
 .PHONY : classes/maxHeap.cpp.i
 
 classes/maxHeap.s: classes/maxHeap.cpp.s
@@ -197,7 +197,7 @@ classes/maxHeap.s: classes/maxHeap.cpp.s
 
 # target to generate assembly for a file
 classes/maxHeap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/maxHeap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/maxHeap.cpp.s
 .PHONY : classes/maxHeap.cpp.s
 
 classes/menu.obj: classes/menu.cpp.obj
@@ -205,7 +205,7 @@ classes/menu.obj: classes/menu.cpp.obj
 
 # target to build an object file
 classes/menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/menu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/menu.cpp.obj
 .PHONY : classes/menu.cpp.obj
 
 classes/menu.i: classes/menu.cpp.i
@@ -213,7 +213,7 @@ classes/menu.i: classes/menu.cpp.i
 
 # target to preprocess a source file
 classes/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/menu.cpp.i
 .PHONY : classes/menu.cpp.i
 
 classes/menu.s: classes/menu.cpp.s
@@ -221,32 +221,8 @@ classes/menu.s: classes/menu.cpp.s
 
 # target to generate assembly for a file
 classes/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/menu.cpp.s
 .PHONY : classes/menu.cpp.s
-
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -256,7 +232,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... TRABALHO_2_DA
+	@echo ... TRABALHO-2_DA
 	@echo ... classes/grafo.obj
 	@echo ... classes/grafo.i
 	@echo ... classes/grafo.s
@@ -269,9 +245,6 @@ help:
 	@echo ... classes/menu.obj
 	@echo ... classes/menu.i
 	@echo ... classes/menu.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 .PHONY : help
 
 

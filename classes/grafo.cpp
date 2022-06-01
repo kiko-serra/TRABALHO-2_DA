@@ -6,7 +6,7 @@
 #include "maxHeap.h"
 using namespace std;
 
-#define INF (INT_MAX/2)
+#define INF INT_MAX
 
 Grafo::Grafo(int num) : num_nos_(num), nos_(num + 1) {}
 
@@ -91,7 +91,75 @@ int Grafo::unweighted_shortest_path() {
     return nos_[num_nos_-1].dist_;
 }
 
+void Grafo::edmunds_karp(int s, int t) {
+    int fluxo_max = 0;
+    while (true) {
+        bfs(1);
+        if (nos_[t].dist_ == INF) {
+            cout << "testeee" << endl;
+            break;
+        }
+        int path_flow = INF;
+        for (int v = t; v != s; v = nos_[v].anterior_) {
+            path_flow = min(path_flow, nos_[nos_[v].anterior_].adj[procura_no(nos_[v].anterior_, v)].capacidade_);
+        }
+        fluxo_max += path_flow;
+        for (int v = t; v != s; v = nos_[v].anterior_) {
+            int u = nos_[v].anterior_;
+            int w = procura_no(u, v);
+            nos_[u].adj[w].capacidade_ -= path_flow;
+            nos_[v].adj[w].capacidade_ += path_flow;
+        }
+    }
+    cout << "Fluxo máximo: " << fluxo_max << endl;
+}
 
+Grafo Grafo::rede_residual() {
+    Grafo rede;
+    //add all vertexes
+    for(auto v: vertexSet){
+        rede.addVertex(v->info);
+    }
+    for(Vertex<T>* v: vertexSet){
+        for(Edge<T> edge : v->adj){
+            //Cf(u,v)
+            if(edge.capacity - edge.getFlux() > 0) rede.addEdge(v->info, edge.dest->info, edge.duration, edge.capacity, edge.capacity - edge.getFlux());
+        }
+    }
+
+    for(auto v: vertexSet){
+        for(Edge<T> edge : v->adj){
+            //Cf(v,u)
+            if(edge.getFlux() > 0) rede.addEdge(edge.dest->info ,v->info, edge.duration, edge.capacity, edge.getFlux());
+        }
+    }
+    return rede;
+}
+Grafo Grafo::residual_grid(int s, int t) {
+    Grafo res(num_nos_);
+    for (int i = 1; i <= num_nos_; i++) {
+        for (auto &w : nos_[i].adj) {
+            res.addAresta(i, w.destino_, w.capacidade_, w.duracao_);
+        }
+    }
+    for (int i = 1; i <= num_nos_; i++) {
+        for (auto &w : nos_[i].adj) {
+            res.addAresta(w.destino_, i, 0, -w.duracao_);
+        }
+    }
+    return res;
+}
+
+int Grafo::procura_no(int u, int v) {
+    if (u < 0) return -1;
+    for (size_t i = 1; i <= nos_[u].adj.size(); i++) {
+        if (nos_[u].adj[i].destino_ == v) {
+            cout << "teste" << endl;
+            return i;
+        }
+    }
+    return -1;
+}
 
 void Grafo::inicializa_nos(){
     for(auto &n: nos_) {
@@ -101,7 +169,7 @@ void Grafo::inicializa_nos(){
     }
 
     nos_[0].visitado_ = true;
-    nos_[1].dist_ = INT_MAX;
+    nos_[1].dist_ = INF;
 }
 
 list<int> Grafo::get_caminho(int origem, int destino) {
