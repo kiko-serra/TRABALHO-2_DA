@@ -224,30 +224,6 @@ classes/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/menu.cpp.s
 .PHONY : classes/menu.cpp.s
 
-classes/transporte.obj: classes/transporte.cpp.obj
-.PHONY : classes/transporte.obj
-
-# target to build an object file
-classes/transporte.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/transporte.cpp.obj
-.PHONY : classes/transporte.cpp.obj
-
-classes/transporte.i: classes/transporte.cpp.i
-.PHONY : classes/transporte.i
-
-# target to preprocess a source file
-classes/transporte.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/transporte.cpp.i
-.PHONY : classes/transporte.cpp.i
-
-classes/transporte.s: classes/transporte.cpp.s
-.PHONY : classes/transporte.s
-
-# target to generate assembly for a file
-classes/transporte.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO_2_DA.dir\build.make CMakeFiles/TRABALHO_2_DA.dir/classes/transporte.cpp.s
-.PHONY : classes/transporte.cpp.s
-
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -293,9 +269,6 @@ help:
 	@echo ... classes/menu.obj
 	@echo ... classes/menu.i
 	@echo ... classes/menu.s
-	@echo ... classes/transporte.obj
-	@echo ... classes/transporte.i
-	@echo ... classes/transporte.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

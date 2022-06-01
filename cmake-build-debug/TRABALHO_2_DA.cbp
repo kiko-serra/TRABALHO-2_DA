@@ -93,9 +93,6 @@
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/main.cpp">
 			<Option target="TRABALHO_2_DA"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/main.h">
-			<Option target="TRABALHO_2_DA"/>
-		</Unit>
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/maxHeap.cpp">
 			<Option target="TRABALHO_2_DA"/>
 		</Unit>
@@ -106,12 +103,6 @@
 			<Option target="TRABALHO_2_DA"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/menu.h">
-			<Option target="TRABALHO_2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/transporte.cpp">
-			<Option target="TRABALHO_2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/transporte.h">
 			<Option target="TRABALHO_2_DA"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/main.cpp">
