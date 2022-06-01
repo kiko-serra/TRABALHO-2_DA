@@ -34,9 +34,6 @@ class Grafo {
     };
     int num_nos_;
     vector<No> nos_;
-    void dijkstra(int s);
-    void bfs(int v);
-    void mst(int s);
 
 public:
     Grafo();
@@ -72,7 +69,7 @@ public:
 
     int maxGrupo();
 
-    int maximiza_capacidade_caminhos_multiplos();
+    int unweighted_shortest_path();
 
     void inicializa_nos();
 
@@ -81,6 +78,8 @@ public:
     void print_grafo();
 
     void print_caminho(list<int> caminho);
+
+    void bfs(int v);
 
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);

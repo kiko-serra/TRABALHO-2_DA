@@ -30,6 +30,16 @@ public:
 
     void ex1_2();
 
+    void ex2_1();
+
+    void ex2_2();
+
+    void ex2_3();
+
+    void ex2_4();
+
+    void ex2_5();
+
     string escolhaFicheiroTeste(int num);
 
     void escolhaFuncoes(char opcoes);

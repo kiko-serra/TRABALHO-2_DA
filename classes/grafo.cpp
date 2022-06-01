@@ -63,30 +63,34 @@ int Grafo::maxGrupo() {
     return nos_[num_nos_-1].dist_;
 }
 
-int Grafo::maximiza_capacidade_caminhos_multiplos() {
-    inicializa_nos();
-    MaxHeap<int, int> heap(num_nos_, -5);
-    //if -5 -> not found
-    for (int i = 1; i <=num_nos_; i++) {
-        heap.insert(i, nos_[i].dist_);
+void Grafo::bfs(int v) {
+    for (int i = 1; i <= num_nos_; i++) {
+        nos_[i].dist_ = INF;
+        nos_[i].anterior_ = -1;
+        nos_[i].visitado_ = false;
     }
-
-    while(heap.getSize() != 0){
-        int v = heap.removeMax();
-        nos_[v].visitado_=true;
-        for(auto &w : nos_[v].adj){
-            if(min(nos_[v].dist_, w.capacidade_) == nos_[w.destino_].dist_){
-                
-            }
-            else if (min(nos_[v].dist_, w.capacidade_) > nos_[w.destino_].dist_){
-                nos_[w.destino_].dist_=min(nos_[v].dist_, w.capacidade_);
-                nos_[w.destino_].anterior_ = v;
-                heap.increaseKey(w.destino_,nos_[w.destino_].dist_);
+    nos_[v].dist_ = 0;
+    queue<int> fila;
+    fila.push(v);
+    while (!fila.empty()) {
+        int u = fila.front();
+        fila.pop();
+        for (auto &w : nos_[u].adj) {
+            if (!nos_[w.destino_].visitado_) {
+                nos_[w.destino_].dist_ = nos_[u].dist_ + 1;
+                nos_[w.destino_].anterior_ = u;
+                fila.push(w.destino_);
+                nos_[w.destino_].visitado_ = true;
             }
         }
     }
+}
+int Grafo::unweighted_shortest_path() {
+    bfs(1);
+    print_caminho(get_caminho(1, num_nos_-1));
     return nos_[num_nos_-1].dist_;
 }
+
 
 
 void Grafo::inicializa_nos(){
@@ -136,4 +140,5 @@ void Grafo::print_caminho(list<int> caminho) {
         cout << i << " -> ";
     }
     cout << endl;
+    cout << "Numero de nos: " << caminho.size() << endl;
 }

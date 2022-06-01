@@ -10,7 +10,6 @@ using namespace std;
 
 Menu::Menu() = default;
 
-
 Grafo Menu::load(string teste){
     int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
 
@@ -22,13 +21,6 @@ Grafo Menu::load(string teste){
     iss >> vertices >> ramos;
     Grafo grafo;
     grafo.init_grafo(vertices);
-
-    cout << grafo.get_num_nos() << " isto é o numero de nos " << endl;
-    //tests
-    /*cout << " vertices " << vertices << endl;
-    cout << "ramos " << ramos << endl;
-    cout << "size " <<grafo.get_nos().size() << endl;
-    */
 
     while(file >> numero){
         switch (contador) {
@@ -44,20 +36,12 @@ Grafo Menu::load(string teste){
             case 3:
                 duracao = numero;
                 grafo.addAresta(origem, destino, capacidade, duracao);
-                //cout << origem << " " << destino << " " << capacidade << " " << duracao << endl;
                 contador=-1;
                 break;
             default:
                 break;
         }
         contador++;
-    }
-    //imprime as arestas do grafo
-    for (int i = 0; i < grafo.get_nos().size(); i++) {
-        for (int j = 0; j < grafo.get_nos()[i].adj.size(); j++) {
-            //cout << "entrou segundo for " << endl;
-            //cout << i << " "<<grafo.get_nos()[i].adj[j].destino_ << ' ' << grafo.get_nos()[i].adj[j].capacidade_<< ' '<< grafo.get_nos()[i].adj[j].duracao_ << endl;
-        }
     }
     return grafo;
 }
@@ -77,10 +61,59 @@ void Menu::ex1_2(){
     cout << "qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
     Grafo grafo = load(escolhaFicheiroTeste(valor));
-    int maxGrupo = grafo.maximiza_capacidade_caminhos_multiplos();
-    cout <<"Cenario 1.2: " << maxGrupo <<" é a capacidade máxima"<< endl;
+    int maxGrupo = grafo.unweighted_shortest_path();
+    cout <<"Cenario 1.2: " << maxGrupo <<" é a capacidade máxima para o menor número de tranbordos"<< endl;
 }
 
+void Menu::ex2_1(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    grafo.inicializa_nos();
+    grafo.unweighted_shortest_path();
+    grafo.get_caminho(0, grafo.get_num_nos()-1);
+}
+
+void Menu::ex2_2(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    grafo.inicializa_nos();
+    grafo.unweighted_shortest_path();
+    grafo.get_caminho(0, grafo.get_num_nos()-1);
+}
+
+void Menu::ex2_3(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    grafo.inicializa_nos();
+    grafo.unweighted_shortest_path();
+    grafo.get_caminho(0, grafo.get_num_nos()-1);
+}
+
+void Menu::ex2_4(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    grafo.inicializa_nos();
+    grafo.unweighted_shortest_path();
+    grafo.get_caminho(0, grafo.get_num_nos()-1);
+}
+
+void Menu::ex2_5(){
+    int valor;
+    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cin >> valor;
+    Grafo grafo = load(escolhaFicheiroTeste(valor));
+    grafo.inicializa_nos();
+    grafo.unweighted_shortest_path();
+    grafo.get_caminho(0, grafo.get_num_nos()-1);
+}
 void Menu::printCenarios(){
     cout << "Cenario 1.1 primir 1: " << endl;
     cout << "Cenario 1.2 primir 2: " << endl;
@@ -104,14 +137,19 @@ void Menu::escolhaFuncoes(char opcao){
             ex1_2();
             break;
         case '3':
+            ex2_1();
             break;
         case '4':
+            ex2_2();
             break;
         case '5':
+            ex2_3();
             break;
         case '6':
+            ex2_4();
             break;
         case '7':
+            ex2_5();
             break;
         default:
             cout << "Opcao invalida" << endl;
