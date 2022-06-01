@@ -5,7 +5,7 @@
 #ifndef TRABALHO_2_DA_MENU_H
 #define TRABALHO_2_DA_MENU_H
 
-#include "transporte.h"
+#include "grafo.h"
 class Menu {
 
     /**
