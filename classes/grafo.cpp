@@ -4,6 +4,7 @@
 
 #include "grafo.h"
 #include "maxHeap.h"
+using namespace std;
 
 #define INF (INT_MAX/2)
 
@@ -21,15 +22,12 @@ void Grafo::addAresta(int origem,int destino, int capacidade, int duracao) {
 }
 
 void Grafo::init_grafo(int num) {
-    cout << "numero de vertices verdadeiro "<< num << endl;
     nos_.clear();
     No aux{{}, -1, 0, 0};
     for (int i = 0; i <= num; i++) {
         nos_.push_back(aux);
     }
     num_nos_=(int)nos_.size();
-    cout << "no qualquer " << nos_[num].anterior_ << endl;
-    cout << "quantos nos existem " << nos_.size() << " " << num_nos_<< endl;
 }
 
 vector<Grafo::No> Grafo::get_nos() const {
@@ -41,8 +39,6 @@ int Grafo::get_num_nos() const{
 };
 
 int Grafo::maxGrupo() {
-    int res;
-
     for(auto &n: nos_) {
         n.visitado_ = false;
         n.anterior_ = -1;
@@ -57,7 +53,7 @@ int Grafo::maxGrupo() {
     for (int i = 1; i <=num_nos_; i++) {
         heap.insert(i, nos_[i].dist_);
     }
-    //erro aqui -> nao altera o anterior
+
     while(heap.getSize() != 0){
         int v = heap.removeMax();
         nos_[v].visitado_=true;
@@ -69,19 +65,45 @@ int Grafo::maxGrupo() {
             }
         }
     }
-    int node = num_nos_-1;
-    int capacity = INT_MAX;
-    while(nos_[node].anterior_ != -1 && node != 1){
+    print_caminho(get_caminho(1, num_nos_-1));
+    return nos_[num_nos_-1].dist_;
+}
+
+
+list<int> Grafo::get_caminho(int origem, int destino) {
+    list<int> caminho;
+    if (nos_[destino].anterior_ == -1) {
+        return caminho;
+    }
+    int node = destino;
+    while (node != origem && nos_[node].anterior_ != -1) {
         int pos_anterior = nos_[node].anterior_;
         for (auto &aresta : nos_[pos_anterior].adj) {
-            if (aresta.destino_==node){
-                cout << node << " <- ";
-                if(capacity > aresta.capacidade_)
-                    capacity=aresta.capacidade_;
+            if (aresta.destino_ == node) {
+                caminho.push_front(node);
+                break;
             }
         }
-        node= nos_[node].anterior_;
+        node = nos_[node].anterior_;
     }
-    cout << node << endl;
-    return capacity;
+    caminho.push_front(node);
+    return caminho;
+}
+
+void Grafo::print_grafo() {
+    for (int i = 1; i <=num_nos_; i++) {
+        cout << "No " << i << ": ";
+        for (auto &aresta : nos_[i].adj) {
+            cout << "(" << aresta.destino_ << "," << aresta.capacidade_ << "," << aresta.duracao_ << ") ";
+        }
+        cout << endl;
+    }
+}
+
+void Grafo::print_caminho(list<int> caminho) {
+    cout << "Caminho: ";
+    for (auto &i : caminho) {
+        cout << i << " -> ";
+    }
+    cout << endl;
 }

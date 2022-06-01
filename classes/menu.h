@@ -20,13 +20,21 @@ public:
     * @brief carrega e cria um grafo consuante um ficheiro lido
     * @return grafo populado
     */
-    Grafo load();
+    Grafo load(string teste);
 
     /**
     * @brief chama a funcao e guarda o grafo
     */
 
-    void program();
+    void ex1_1();
+
+    string escolhaFicheiroTeste(int num);
+
+    void escolhaFuncoes(char opcoes);
+
+    void escolhaFicheiro();
+
+    void printCenarios();
 
     //Constructor
     Menu();

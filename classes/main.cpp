@@ -7,6 +7,6 @@
 
 int main() {
     Menu menu;
-    menu.program();
+    menu.printCenarios();
     return 0;
 }

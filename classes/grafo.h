@@ -14,6 +14,8 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
+#include <algorithm>
+#include <list>
 
 using namespace std;
 
@@ -70,6 +72,11 @@ public:
 
     int maxGrupo();
 
+    list<int> get_caminho(int origem, int destino);
+
+    void print_grafo();
+
+    void print_caminho(list<int> caminho);
 
     double dijkstra_distance(int a, int b);
     int bfs_distance(int a, int b);
