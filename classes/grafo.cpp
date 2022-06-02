@@ -114,7 +114,7 @@ void Grafo::edmunds_karp(int s, int t) {
     cout << "Fluxo máximo: " << fluxo_max << endl;
 }
 
-Grafo Grafo::rede_residual() {
+/*Grafo Grafo::rede_residual() {
     Grafo rede;
     //add all vertexes
     for(auto v: vertexSet){
@@ -134,7 +134,7 @@ Grafo Grafo::rede_residual() {
         }
     }
     return rede;
-}
+}*/
 Grafo Grafo::residual_grid(int s, int t) {
     Grafo res(num_nos_);
     for (int i = 1; i <= num_nos_; i++) {

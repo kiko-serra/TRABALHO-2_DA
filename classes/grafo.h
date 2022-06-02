@@ -85,8 +85,9 @@ public:
 
     Grafo residual_grid(int s, int t);
 
-    int procura_no(int u, int v);
+    //Grafo rede_residual();
 
+    int procura_no(int u, int v);
 
 
     double dijkstra_distance(int a, int b);
