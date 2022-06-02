@@ -27,7 +27,7 @@ class Grafo {
     };
 
     struct No {
-        vector<Aresta> adj; // The list of outgoing edges (to adjacent nodes)
+        vector<Aresta> adj; 
         int anterior_;
         bool visitado_;
         int dist_;
