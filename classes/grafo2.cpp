@@ -2,6 +2,8 @@
 #include <climits>
 #include <vector>
 #include <queue>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -10,20 +12,27 @@ public:
   int n;                    
   vector<vector <int>> adj; 
   vector<vector <int>> cap;
-    vector<vector <int>> dur;
+  vector<vector <int>> dur;
 
   Grafo(int n) {
     this->n = n;
     adj.resize(n+1);
     cap.resize(n+1);
-    for (int i=1; i<=n; i++) cap[i].resize(n+1);
+    dur.resize(n+1);
+    for (int i=1; i<=n; i++){
+      cap[i].resize(n+1);
+      dur[i].resize(n+1);
+    }
+
   }
   
   void add_aresta(int a, int b, int c, int d) {
     // adjacencias do grafo nao dirigido, porque podemos ter de andar no sentido
     // contrario ao proatualarmos caminhos de aumento
+    cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << endl;
     adj[a].push_back(b);
     adj[b].push_back(a);
+    cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << endl;
     cap[a][b] = c;
     dur[a][b] = d;
   }
@@ -86,24 +95,52 @@ public:
     
     return fluxo;
   }
+Grafo load(string teste){
+    int origem, destino, capacidade, duracao, vertices, ramos, numero, contador=0;
+
+    ifstream file(teste);
+    string line;
+    getline(file, line);
+    istringstream iss(line);
+    //get first elements in file -> nodes and paths
+    iss >> vertices >> ramos;
+    Grafo grafo(vertices);
+
+    while(file >> numero){
+        switch (contador) {
+            case 0:
+                origem = numero;
+                break;
+            case 1:
+                destino = numero;
+                break;
+            case 2:
+                capacidade = numero;
+                break;
+            case 3:
+                duracao = numero;
+                grafo.add_aresta(origem, destino, capacidade, duracao);
+                contador=-1;
+                break;
+            default:
+                break;
+        }
+        contador++;
+    }
+    return grafo;
+}
 };
 
 
 
 int main() {
-  int n, e, a, b, c;
-  
-  cin >> n;
-  Grafo *g = new Grafo(n);
-  cin >> e;
-  for (int i=0; i<e; i++) {
-    cin >> a >> b >> c;
-    g->add_aresta(a, b, c);
-  }
-
+  string teste;
+  cin >> teste;
+  Grafo g = load(teste);
   // Execucao exemplo usando 1 como no origem a 4 como o destino
-  int fluxo = g->fluxo_max(1, 6);
+  int fluxo = g.fluxo_max(1, 6);
   cout << "Fluxo maximo: " << fluxo << endl;
 
   return 0;
 }
+

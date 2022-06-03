@@ -6,9 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(classes)
 
 add_executable(TRABALHO-2_DA
-        classes/grafo.cpp
-        classes/grafo.h
-        classes/menu.cpp
-        classes/menu.h
-        classes/maxHeap.cpp
-        classes/maxHeap.h classes/main.cpp)
+        classes/grafo2.cpp)

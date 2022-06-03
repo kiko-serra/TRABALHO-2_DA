@@ -16,6 +16,7 @@
 #include <cmath>
 #include <algorithm>
 #include <list>
+#include <stack>
 
 using namespace std;
 
@@ -24,20 +25,28 @@ class Grafo {
         int destino_;
         int capacidade_;
         int duracao_;
+        int fluxo_;
     };
 
     struct No {
-        vector<Aresta> adj; 
+        vector<Aresta> adj_; 
         int anterior_;
         bool visitado_;
         int dist_;
+        int es_;
+        int cap_;
+        vector<int> vec_pred_;
+        int grauE_;
+        int precede_;
     };
     int num_nos_;
     vector<No> nos_;
+    bool hasDir_;
+    int inicial_;
+    int fluxo_max_;
 
 public:
-    Grafo();
-    Grafo(int num);
+    Grafo(int num, bool dir = false);
 
     /**
     * @brief inicializa o grafo com um certo valor de nos
@@ -52,34 +61,49 @@ public:
     * @param capacidade a capacidade que a aresta tem para transporte
     * @param duracao a duracao de transporte por esta aresta
     */
-    void addAresta(int origem,int destino, int capacidade, int duracao);
+    void addAresta(int origem,int destino, int capacidade, int duracao, int fluxo=0);
 
-    /**
-    * @brief Getter para facil acesso ao vetor de nos do grafo
-    * @return vetor de nos do grafo
-    */
-    vector<No> get_nos() const;
+    int getNumNos();
 
 
-    /**
-    * @brief facil acesso ao numero de nos do grafo
-    * @return inteiro com o numero de nos do grafo
-    */
-    int get_num_nos() const;
+//------------------Cenário 1------------------
 
-    int maxGrupo();
+    int maxGrupo(int origem, int destino);
+
+    int minTransbordos(int origem, int destino);
+
+    int maxGrupoMultiCaminhos(int origem, int destino);
 
     int unweighted_shortest_path();
 
-    void inicializa_nos();
+    void inicializaNos();
 
-    list<int> get_caminho(int origem, int destino);
+    list<int> getCaminho(int origem, int destino);
+
+    list<list<int>> getTodosCaminhos(int origem, int destino);
 
     void print_grafo();
 
     void print_caminho(list<int> caminho);
 
+//------------------Cenário 2------------------
+    //2.1
+    bool caminhoGrupo(int grupo);
+
+    //2.2
+    void caminhoMaiorGrupo(int grupo, int incremento);
     void bfs(int v);
+
+    //2.3
+    int getFluxoMax();
+
+    //2.4
+    int earliestStart(int origem, int destino);
+
+
+    int bfs(int& tamanho_max);
+
+    int capacidadeResidual(Aresta a);
 
     void edmunds_karp(int s, int t);
 
@@ -89,13 +113,6 @@ public:
 
     int procura_no(int u, int v);
 
-
-    double dijkstra_distance(int a, int b);
-    int bfs_distance(int a, int b);
-    list<int> dijkstra_path(int a, int b);
-    list<int> bfs_path(int a, int b);
-    double mst_distance(int a);
-    void closeNo(int a);
 };
 
 

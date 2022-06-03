@@ -84,25 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/grafo.cpp">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/grafo.h">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/main.cpp">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/maxHeap.cpp">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/maxHeap.h">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/menu.cpp">
-			<Option target="TRABALHO-2_DA"/>
-		</Unit>
-		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/menu.h">
+		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/classes/grafo2.cpp">
 			<Option target="TRABALHO-2_DA"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/CMakeLists.txt">
