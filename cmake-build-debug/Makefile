@@ -128,29 +128,101 @@ TRABALHO-2_DA/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/build
 .PHONY : TRABALHO-2_DA/fast
 
-classes/grafo2.obj: classes/grafo2.cpp.obj
-.PHONY : classes/grafo2.obj
+codigo/grafo.obj: codigo/grafo.cpp.obj
+.PHONY : codigo/grafo.obj
 
 # target to build an object file
-classes/grafo2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo2.cpp.obj
-.PHONY : classes/grafo2.cpp.obj
+codigo/grafo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/grafo.cpp.obj
+.PHONY : codigo/grafo.cpp.obj
 
-classes/grafo2.i: classes/grafo2.cpp.i
-.PHONY : classes/grafo2.i
+codigo/grafo.i: codigo/grafo.cpp.i
+.PHONY : codigo/grafo.i
 
 # target to preprocess a source file
-classes/grafo2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo2.cpp.i
-.PHONY : classes/grafo2.cpp.i
+codigo/grafo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/grafo.cpp.i
+.PHONY : codigo/grafo.cpp.i
 
-classes/grafo2.s: classes/grafo2.cpp.s
-.PHONY : classes/grafo2.s
+codigo/grafo.s: codigo/grafo.cpp.s
+.PHONY : codigo/grafo.s
 
 # target to generate assembly for a file
-classes/grafo2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/classes/grafo2.cpp.s
-.PHONY : classes/grafo2.cpp.s
+codigo/grafo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/grafo.cpp.s
+.PHONY : codigo/grafo.cpp.s
+
+codigo/main.obj: codigo/main.cpp.obj
+.PHONY : codigo/main.obj
+
+# target to build an object file
+codigo/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/main.cpp.obj
+.PHONY : codigo/main.cpp.obj
+
+codigo/main.i: codigo/main.cpp.i
+.PHONY : codigo/main.i
+
+# target to preprocess a source file
+codigo/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/main.cpp.i
+.PHONY : codigo/main.cpp.i
+
+codigo/main.s: codigo/main.cpp.s
+.PHONY : codigo/main.s
+
+# target to generate assembly for a file
+codigo/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/main.cpp.s
+.PHONY : codigo/main.cpp.s
+
+codigo/maxHeap.obj: codigo/maxHeap.cpp.obj
+.PHONY : codigo/maxHeap.obj
+
+# target to build an object file
+codigo/maxHeap.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/maxHeap.cpp.obj
+.PHONY : codigo/maxHeap.cpp.obj
+
+codigo/maxHeap.i: codigo/maxHeap.cpp.i
+.PHONY : codigo/maxHeap.i
+
+# target to preprocess a source file
+codigo/maxHeap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/maxHeap.cpp.i
+.PHONY : codigo/maxHeap.cpp.i
+
+codigo/maxHeap.s: codigo/maxHeap.cpp.s
+.PHONY : codigo/maxHeap.s
+
+# target to generate assembly for a file
+codigo/maxHeap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/maxHeap.cpp.s
+.PHONY : codigo/maxHeap.cpp.s
+
+codigo/menu.obj: codigo/menu.cpp.obj
+.PHONY : codigo/menu.obj
+
+# target to build an object file
+codigo/menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/menu.cpp.obj
+.PHONY : codigo/menu.cpp.obj
+
+codigo/menu.i: codigo/menu.cpp.i
+.PHONY : codigo/menu.i
+
+# target to preprocess a source file
+codigo/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/menu.cpp.i
+.PHONY : codigo/menu.cpp.i
+
+codigo/menu.s: codigo/menu.cpp.s
+.PHONY : codigo/menu.s
+
+# target to generate assembly for a file
+codigo/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/codigo/menu.cpp.s
+.PHONY : codigo/menu.cpp.s
 
 # Help Target
 help:
@@ -161,9 +233,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TRABALHO-2_DA
-	@echo ... classes/grafo2.obj
-	@echo ... classes/grafo2.i
-	@echo ... classes/grafo2.s
+	@echo ... codigo/grafo.obj
+	@echo ... codigo/grafo.i
+	@echo ... codigo/grafo.s
+	@echo ... codigo/main.obj
+	@echo ... codigo/main.i
+	@echo ... codigo/main.s
+	@echo ... codigo/maxHeap.obj
+	@echo ... codigo/maxHeap.i
+	@echo ... codigo/maxHeap.s
+	@echo ... codigo/menu.obj
+	@echo ... codigo/menu.i
+	@echo ... codigo/menu.s
 .PHONY : help
 
 
