@@ -47,38 +47,41 @@ Grafo Menu::load(string teste){
 
 
 void Menu::ex1_1(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     int maxGrupo = grafo.maxGrupo(1, grafo.getNumNos()-1);
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout <<"Cenario 1.1: " << maxGrupo <<" é a capacidade máxima"<< endl;
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+    cout <<"Cenario 1.1: " << maxGrupo <<" e a capacidade maxima"<< endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex1_2(){
-    auto start = chrono::high_resolution_clock::now();
-    int valor, maxGrupo;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+
+    int valor;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
-    //int maxGrupo = grafo.unweightedShortestPathGrafo();
+    int maxGrupo = grafo.minTransbordos(1, grafo.getNumNos()-1);
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout <<"Cenario 1.2: " << maxGrupo <<" é a capacidade máxima para o menor número de tranbordos"<< endl;
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+    cout <<"Cenario 1.2: " << maxGrupo <<" e a capacidade maxima para o menor numero de tranbordos"<< endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex2_1(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor, grupo;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
     cout << "Qual a dimensao do grupo que pretende? " << endl;
     cin >> grupo;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     bool result = grafo.determinaEncam(1, grafo.getNumNos(), grupo);
     auto stop = chrono::high_resolution_clock::now();
@@ -86,19 +89,20 @@ void Menu::ex2_1(){
     if(result)
         cout << "Cenario 2.1: O grupo de " << grupo << " pode ser encaminhado" << endl;
     else
-        cout << "Cenario 2.1: O grupo de " << grupo << " não pode ser encaminhado" << endl;
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+        cout << "Cenario 2.1: O grupo de " << grupo << " nao pode ser encaminhado" << endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex2_2(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor, grupo, incremento;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
     cout << "Qual a dimensao do grupo que pretende? " << endl;
     cin >> grupo;
     cout << "Qual o incremento a este grupo pretende? " << endl;
     cin >> incremento;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     bool result = grafo.determinaEncam(1, grafo.getNumNos(), (grupo+incremento));
     auto stop = chrono::high_resolution_clock::now();
@@ -106,45 +110,53 @@ void Menu::ex2_2(){
     if(result)
         cout << "Cenario 2.1: O grupo de  " << grupo << " com incremento de " << incremento << " pode ser encaminhado" << endl;
     else
-        cout << "Cenario 2.1: O grupo de  " << grupo << " com incremento de " << incremento << " não pode ser encaminhado" << endl;
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+        cout << "Cenario 2.1: O grupo de  " << grupo << " com incremento de " << incremento << " nao pode ser encaminhado" << endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 void Menu::ex2_3(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
     Grafo grafo = load(escolhaFicheiroTeste(valor));
+    auto start = chrono::high_resolution_clock::now();
+    int grupo=0;
+    do{
+        grupo++;
+    }while(grafo.determinaEncam(1, grafo.getNumNos(), grupo));
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+    cout << "Cenario 2.3: O tamanho maximo para o grupo e " << grupo << endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex2_4(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     int es = grafo.earliestStart(0, grafo.getNumNos());
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout <<"Cenario 2.4: " << es <<" é o tempo que demora ao grupo para se juntar no destino"<< endl;
-    cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+    cout <<"Cenario 2.4: " << es <<" e o tempo que demora ao grupo para se juntar no destino"<< endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex2_5(){
-    auto start = chrono::high_resolution_clock::now();
+
     int valor;
-    cout << "qual o ficheiro de teste? 1-10" << endl;
+    cout << "Qual o ficheiro de teste? 1-10" << endl;
     cin >> valor;
+    auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     int durMin = grafo.earliestStart(0, grafo.getNumNos()-1);
     int lf = grafo.latestFinish(0, grafo.getNumNos()-1, durMin);
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout <<"Cenario 2.5: " << lf <<" é o tempo que demora ao grupo para se juntar no destino"<< endl;
-     cout << endl << "Duração:   " << duration.count() << " microsegundos" << endl;
+    cout <<"Cenario 2.5: " << lf <<" e o tempo que demora ao grupo para se juntar no destino"<< endl;
+     cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }   
 void Menu::printCenarios(){
     cout << "Cenario 1.1 primir 1: " << endl;
@@ -211,7 +223,7 @@ string Menu::escolhaFicheiroTeste(int num){
             teste = "../input/in06_b.txt";
             break;
         case 7:
-            teste = "../Tests_B/in07_b.txt";
+            teste = "../input/in07_b.txt";
             break;
         case 8:
             teste = "../input/in08_b.txt";

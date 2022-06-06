@@ -88,12 +88,7 @@ vector<int> Grafo::getCaminhoGrafo(int origem, int destino) {
 //1.2
 int Grafo::minTransbordos(int origem, int destino){
 
-    for(auto &w : nos_){
-        w.dist_=INF;
-        w.anterior_=-1;
-    }
-    nos_[origem].dist_=0;
-    nos_[origem].anterior_=origem;
+    inicializaNos();
 
     MinHeap<int, int> heap(num_nos_, -5);
     //if -5 -> not found
@@ -198,14 +193,14 @@ Grafo Grafo::redeResidual(int origem, int destino) {
 
 //2.1 - 2.2 - 2.3
 bool Grafo::determinaEncam(int origem, int destino, int grupo) {
-    int capResidual = INF;
+    int capResidual = INT32_MAX;
     Grafo rede = Grafo::redeResidual(origem, destino);
     unweightedShortestPathRede(&rede);
     vector<int> caminho = Grafo::getCaminhoRede(rede,origem, destino);
 
-    while(grupo!=0){
+    while(grupo>0){
         if(caminho.empty()){
-            cout << "Dimensão do grupo muito grande" << endl;
+            cout << "Dimensao do grupo muito grande" << endl;
             return false;
         }
         for(int i = 0; i<caminho.size(); i++){
@@ -243,23 +238,7 @@ vector<int> Grafo::getCaminhoRede(Grafo rede, int origem, int destino) {
     return caminho;
 }
 
-void Grafo::unweightedShortestPathGrafo() {
-    inicializaNos();
-    queue<int> fila;
-    fila.push(1);
-    while (!fila.empty()) {
-        int u = fila.front();
-        fila.pop();
-        for (auto &w : nos_[u].adj_) {
-            if (!nos_[w.destino_].visitado_) {
-                nos_[w.destino_].dist_ = nos_[u].dist_ + 1;
-                nos_[w.destino_].anterior_ = u;
-                fila.push(w.destino_);
-                nos_[w.destino_].visitado_ = true;
-            }
-        }
-    }
-}
+
 
 //2.4
 int Grafo::earliestStart(int origem, int destino){
@@ -417,7 +396,7 @@ int Grafo::procuraNo(int u, int v) {
     return -1;
 }
 
-void Grafo::print_grafo() {
+void Grafo::printGrafo() {
     for (int i = 1; i <=num_nos_; i++) {
         cout << "No " << i << ": ";
         for (auto &aresta : nos_[i].adj_) {
@@ -427,3 +406,20 @@ void Grafo::print_grafo() {
     }
 }
 
+void Grafo::unweightedShortestPathGrafo() {
+    inicializaNos();
+    queue<int> fila;
+    fila.push(1);
+    while (!fila.empty()) {
+        int u = fila.front();
+        fila.pop();
+        for (auto &w : nos_[u].adj_) {
+            if (!nos_[w.destino_].visitado_) {
+                nos_[w.destino_].dist_ = nos_[u].dist_ + 1;
+                nos_[w.destino_].anterior_ = u;
+                fila.push(w.destino_);
+                nos_[w.destino_].visitado_ = true;
+            }
+        }
+    }
+}
