@@ -232,7 +232,6 @@ vector<int> Grafo::getCaminhoRede(Grafo rede, int origem, int destino) {
     while (destino != origem) {
         destino = rede.nos_[destino].anterior_;
         caminho.push_back(destino);
-
     }
     reverse(caminho.begin(), caminho.end());
     return caminho;
@@ -337,6 +336,7 @@ int Grafo::latestFinish(int origem, int destino, int durMin){
             }
         }
     }
+    printCaminho(getCaminhoGrafo2(num_nos_, 1));
     return 0;
 }
 

@@ -62,6 +62,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cm
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/Doxygen.dir/all
 all: CMakeFiles/TRABALHO-2_DA.dir/all
 .PHONY : all
 
@@ -70,8 +71,35 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/Doxygen.dir/clean
 clean: CMakeFiles/TRABALHO-2_DA.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Doxygen.dir
+
+# All Build rule for target.
+CMakeFiles/Doxygen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cmake-build-debug\CMakeFiles --progress-num=1 "Built target Doxygen"
+.PHONY : CMakeFiles/Doxygen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Doxygen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cmake-build-debug\CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Doxygen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/Doxygen.dir/rule
+
+# Convenience name for target.
+Doxygen: CMakeFiles/Doxygen.dir/rule
+.PHONY : Doxygen
+
+# clean rule for target.
+CMakeFiles/Doxygen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/clean
+.PHONY : CMakeFiles/Doxygen.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/TRABALHO-2_DA.dir
@@ -80,7 +108,7 @@ clean: CMakeFiles/TRABALHO-2_DA.dir/clean
 CMakeFiles/TRABALHO-2_DA.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TRABALHO-2_DA.dir\build.make CMakeFiles/TRABALHO-2_DA.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target TRABALHO-2_DA"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA\cmake-build-debug\CMakeFiles --progress-num=2,3,4,5,6 "Built target TRABALHO-2_DA"
 .PHONY : CMakeFiles/TRABALHO-2_DA.dir/all
 
 # Build rule for subdir invocation for target.

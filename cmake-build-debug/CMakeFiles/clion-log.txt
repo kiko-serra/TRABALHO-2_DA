@@ -1,5 +1,6 @@
 "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\User\Desktop\FEUP\2Ano\2Semestre\DA\TRABALHO-2_DA
-Doxygen needs to be installed to generate the documentation.
+-- Found Doxygen: C:/Program Files/doxygen/bin/doxygen.exe (found version "1.9.4 (5d15657a55555e6181a7830a5c723af75e7577e2)") found components: doxygen missing components: dot
+Doxygen build started
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug

@@ -5,13 +5,23 @@
 		<Option title="TRABALHO-2_DA"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\documentacao\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Doxygen">
+				<Option working_dir="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 Doxygen"/>
 					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -107,6 +117,9 @@
 		</Unit>
 		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Desktop/FEUP/2Ano/2Semestre/DA/TRABALHO-2_DA/documentacao/Doxyfile.txt">
+			<Option virtualFolder="CMake Files\documentacao\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

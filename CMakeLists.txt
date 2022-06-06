@@ -14,6 +14,7 @@ add_executable(TRABALHO-2_DA
         codigo/menu.cpp
         codigo/menu.h)
 
+find_package(Doxygen)
 if(DOXYGEN_FOUND)
     set(BUILD_DOC_DIR "${CMAKE_SOURCE_DIR}/documentacao/output")
     if(NOT EXISTS "${BUILD_DOC_DIR}")
