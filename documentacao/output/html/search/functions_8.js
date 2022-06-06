@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rederesidual_0',['redeResidual',['../class_grafo.html#ade5d8f20e08fda87097d999f01757576',1,'Grafo']]]
+  ['printcaminho_0',['printCaminho',['../class_grafo.html#a6f8ad4225c9f2cc4e2c5c55f5c094eff',1,'Grafo']]],
+  ['printcenarios_1',['printCenarios',['../class_menu.html#a76f66f3592905eb680b23794195bfda8',1,'Menu']]]
 ];

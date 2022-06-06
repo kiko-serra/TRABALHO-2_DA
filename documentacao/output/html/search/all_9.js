@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unweightedshortestpathrede_0',['unweightedShortestPathRede',['../class_grafo.html#ade0d7d8cafdb0d3bd47507fbbdb7d3c2',1,'Grafo']]]
+  ['rederesidual_0',['redeResidual',['../class_grafo.html#ade5d8f20e08fda87097d999f01757576',1,'Grafo']]]
 ];

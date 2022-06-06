@@ -62,16 +62,6 @@ void Menu::ex1_1(){
 
 void Menu::ex1_2(){
 
-    int valor;
-    cout << "Qual o ficheiro de teste? 1-10" << endl;
-    cin >> valor;
-    auto start = chrono::high_resolution_clock::now();
-    Grafo grafo = load(escolhaFicheiroTeste(valor));
-    int maxGrupo = grafo.minTransbordos(1, grafo.getNumNos()-1);
-    auto stop = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout <<"Cenario 1.2: " << maxGrupo <<" e a capacidade maxima para o menor numero de tranbordos"<< endl;
-    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
 void Menu::ex2_1(){
@@ -121,12 +111,10 @@ void Menu::ex2_3(){
     Grafo grafo = load(escolhaFicheiroTeste(valor));
     auto start = chrono::high_resolution_clock::now();
     int grupo=0;
-    do{
-        grupo++;
-    }while(grafo.determinaEncamMax(1, grafo.getNumNos()));
+    grupo = grafo.determinaEncamMax(1, grafo.getNumNos());
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout << "Cenario 2.3: O tamanho maximo para o grupo e " << grupo << endl;
+    cout << endl<<"Cenario 2.3: O tamanho maximo para o grupo e " << grupo << endl;
     cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }
 
@@ -151,8 +139,8 @@ void Menu::ex2_5(){
     cin >> valor;
     auto start = chrono::high_resolution_clock::now();
     Grafo grafo = load(escolhaFicheiroTeste(valor));
-    int durMin = grafo.earliestStart(0, grafo.getNumNos()-1);
-    int lf = grafo.latestFinish(0, grafo.getNumNos()-1, durMin);
+    int durMin = grafo.earliestStart(0, grafo.getNumNos());
+    int lf = grafo.latestFinish(0, grafo.getNumNos(), durMin);
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
     cout <<"Cenario 2.5: " << lf <<" e o tempo que demora ao grupo para se juntar no destino"<< endl;

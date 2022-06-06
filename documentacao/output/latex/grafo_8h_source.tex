@@ -39,79 +39,66 @@
 \DoxyCodeLine{35         \textcolor{keywordtype}{bool} visitado\_;}
 \DoxyCodeLine{36         \textcolor{keywordtype}{int} dist\_;}
 \DoxyCodeLine{37         \textcolor{keywordtype}{int} cap\_;}
-\DoxyCodeLine{38         vector<int> vec\_pred\_;}
-\DoxyCodeLine{39         \textcolor{keywordtype}{int} es\_;}
-\DoxyCodeLine{40         \textcolor{keywordtype}{int} grauE\_;}
-\DoxyCodeLine{41         \textcolor{keywordtype}{int} precede\_;}
-\DoxyCodeLine{42         \textcolor{keywordtype}{int} lf\_;}
-\DoxyCodeLine{43         \textcolor{keywordtype}{int} grauS\_;}
-\DoxyCodeLine{44     \};}
-\DoxyCodeLine{45     \textcolor{keywordtype}{int} num\_nos\_;}
-\DoxyCodeLine{46     vector<No> nos\_;}
-\DoxyCodeLine{47     \textcolor{keywordtype}{bool} hasDir\_;}
-\DoxyCodeLine{48     \textcolor{keywordtype}{int} inicial\_;}
-\DoxyCodeLine{49     \textcolor{keywordtype}{int} fluxo\_max\_;}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{public}:}
-\DoxyCodeLine{52     \mbox{\hyperlink{class_grafo}{Grafo}}(\textcolor{keywordtype}{int} num, \textcolor{keywordtype}{bool} dir = \textcolor{keyword}{false});}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{58     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_aad54c4f80d7aefbc7ebcefbae4581bca}{getNumNos}}();}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 }
-\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a8ed35737caf4a6aede09e6ea31434770}{addAresta}}(\textcolor{keywordtype}{int} origem,\textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} capacidade, \textcolor{keywordtype}{int} duracao, \textcolor{keywordtype}{int} fluxo=0, \textcolor{keywordtype}{int} residual = 0);}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a60f991ed27cb6eeca19362878ac0cf77}{inicializaNos}}();}
-\DoxyCodeLine{77     }
-\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a6f8ad4225c9f2cc4e2c5c55f5c094eff}{printCaminho}}(vector<int> caminho);}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Cenário 1-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{86 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/1.1-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{93 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a1ef75b051c3f5908d6669b748ba8c0a7}{maxGrupo}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{94     }
-\DoxyCodeLine{102     vector<int> \mbox{\hyperlink{class_grafo_a3be8339b7fdbda45ec363d2ab7f2da9d}{getCaminhoGrafo}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/1.2-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{105     \textcolor{keywordtype}{int} minTransbordos(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107     \textcolor{keywordtype}{int} maxGrupoMultiCaminhos(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110     list<list<int>> getTodosCaminhos(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112     }
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114     }
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Cenário 2-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{122 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_ade0d7d8cafdb0d3bd47507fbbdb7d3c2}{unweightedShortestPathRede}}(\mbox{\hyperlink{class_grafo}{Grafo}} *rede);}
-\DoxyCodeLine{123     }
-\DoxyCodeLine{131     \mbox{\hyperlink{class_grafo}{Grafo}} \mbox{\hyperlink{class_grafo_ade5d8f20e08fda87097d999f01757576}{redeResidual}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.1-\/2.2-\/2.3-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{143 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_grafo_a4a2a9d8064b8b66d614146daa6d5f301}{determinaEncam}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} grupo);}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{153     vector<int> \mbox{\hyperlink{class_grafo_a2c066cc7f651dbaa7f8ddc91793b3a0c}{getCaminhoRede}}(\mbox{\hyperlink{class_grafo}{Grafo}} rede, \textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.4-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{165     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_afabc26627a6d58442ecf1efd45afeedd}{earliestStart}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{166 }
-\DoxyCodeLine{174     vector<int> \mbox{\hyperlink{class_grafo_a5b6034f94cca8e00970b4ccdebc37317}{getCaminhoGrafo2}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
-\DoxyCodeLine{175 }
-\DoxyCodeLine{176 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.5-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{185 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a28cfacde6e1275a92eee46f6b0ba0183}{latestFinish}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} durMin);}
-\DoxyCodeLine{186 }
-\DoxyCodeLine{187 }
-\DoxyCodeLine{188     \textcolor{comment}{//Nao usados }}
-\DoxyCodeLine{189     \textcolor{keywordtype}{void} bfs(\textcolor{keywordtype}{int} v);}
-\DoxyCodeLine{190     \textcolor{keywordtype}{void} edmundsKarp(\textcolor{keywordtype}{int} s, \textcolor{keywordtype}{int} t);}
-\DoxyCodeLine{191     \textcolor{keywordtype}{int} procuraNo(\textcolor{keywordtype}{int} u, \textcolor{keywordtype}{int} v);}
-\DoxyCodeLine{192     \textcolor{keywordtype}{void} unweightedShortestPathGrafo();}
-\DoxyCodeLine{193     \textcolor{keywordtype}{void} printGrafo();}
-\DoxyCodeLine{194 \};}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{196 }
-\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO\_2\_DA\_GRAFO\_H}}
+\DoxyCodeLine{38         \textcolor{keywordtype}{int} es\_;}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} grauE\_;}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} precede\_;}
+\DoxyCodeLine{41         \textcolor{keywordtype}{int} lf\_;}
+\DoxyCodeLine{42         \textcolor{keywordtype}{int} grauS\_;}
+\DoxyCodeLine{43     \};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} num\_nos\_;}
+\DoxyCodeLine{45     vector<No> nos\_;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{class_grafo}{Grafo}}(\textcolor{keywordtype}{int} num, \textcolor{keywordtype}{bool} dir = \textcolor{keyword}{false});}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_aad54c4f80d7aefbc7ebcefbae4581bca}{getNumNos}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a8ed35737caf4a6aede09e6ea31434770}{addAresta}}(\textcolor{keywordtype}{int} origem,\textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} capacidade, \textcolor{keywordtype}{int} duracao, \textcolor{keywordtype}{int} fluxo=0, \textcolor{keywordtype}{int} residual = 0);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a60f991ed27cb6eeca19362878ac0cf77}{inicializaNos}}();}
+\DoxyCodeLine{73     }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_a6f8ad4225c9f2cc4e2c5c55f5c094eff}{printCaminho}}(vector<int> caminho);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Cenário 1-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/1.1-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{89 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a1ef75b051c3f5908d6669b748ba8c0a7}{maxGrupo}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{90     }
+\DoxyCodeLine{98     vector<int> \mbox{\hyperlink{class_grafo_a3be8339b7fdbda45ec363d2ab7f2da9d}{getCaminhoGrafo}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/1.2-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Cenário 2-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{109 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_ade0d7d8cafdb0d3bd47507fbbdb7d3c2}{unweightedShortestPathRede}}(\mbox{\hyperlink{class_grafo}{Grafo}} *rede);}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{118     \mbox{\hyperlink{class_grafo}{Grafo}} \mbox{\hyperlink{class_grafo_ade5d8f20e08fda87097d999f01757576}{redeResidual}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grafo_aabdf022eef4da80b841484bc159a176e}{caminhoRestante}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} *duracaoCam);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a2f303575bb80e2115098a071086f3c70}{imprimeCaminho2}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.1-\/2.2-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{140 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_grafo_a4a2a9d8064b8b66d614146daa6d5f301}{determinaEncam}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} grupo);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{150     vector<int> \mbox{\hyperlink{class_grafo_a2c066cc7f651dbaa7f8ddc91793b3a0c}{getCaminhoRede}}(\mbox{\hyperlink{class_grafo}{Grafo}} rede, \textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.3-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{159     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a4389a44946c243109d06ef54e64a1268}{determinaEncamMax}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{160 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.4-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{168     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_afabc26627a6d58442ecf1efd45afeedd}{earliestStart}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{177     vector<int> \mbox{\hyperlink{class_grafo_a5b6034f94cca8e00970b4ccdebc37317}{getCaminhoGrafo2}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/2.5-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{188 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grafo_a28cfacde6e1275a92eee46f6b0ba0183}{latestFinish}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{int} durMin);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TRABALHO\_2\_DA\_GRAFO\_H}}
 
 \end{DoxyCode}

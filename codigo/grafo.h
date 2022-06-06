@@ -35,7 +35,6 @@ class Grafo {
         bool visitado_;
         int dist_;
         int cap_;
-        vector<int> vec_pred_;
         int es_;
         int grauE_;
         int precede_;
@@ -44,9 +43,6 @@ class Grafo {
     };
     int num_nos_;
     vector<No> nos_;
-    bool hasDir_;
-    int inicial_;
-    int fluxo_max_;
 
 public:
     Grafo(int num, bool dir = false);
@@ -102,16 +98,7 @@ public:
     vector<int> getCaminhoGrafo(int origem, int destino);
 
 //---------------------1.2---------------------
-    int minTransbordos(int origem, int destino);
 
-    int maxGrupoMultiCaminhos(int origem, int destino);
-
-
-    list<list<int>> getTodosCaminhos(int origem, int destino);
-
-    
-
-    
 
 //------------------Cenário 2------------------
     /**
@@ -165,16 +152,15 @@ public:
 //------------------2.3----------------
 
     /**
-     * @brief procura o caminho mais curto entre dois nos
-     * 
+     * @brief procura o fluxo maximo e os respetivos caminhos
      * @param origem no de origem do grafo
+     * @param destino no de destino do grafo
     */
     int determinaEncamMax(int origem, int destino);
 //--------------------2.4--------------------
 
     /**
      * @brief retorna a duração mínima da viagem do grupo
-     * 
      * @param origem no de origem do grafo
      * @param destino no de destino do grafo
      * @return int tempo em horas
@@ -197,17 +183,11 @@ public:
     * @param origem no de origem do grafo
     * @param destino no de destino do grafo
     * @param durMin duracao mínima da viagem
-    * @return int tempo de espera entre a duração maxima e a duração mínima
+    * @return a duraçãõ mínima da viagem pois não foi acabado
     */
     int latestFinish(int origem, int destino, int durMin);
 
 
-    //Nao usados 
-    void bfs(int v);
-    void edmundsKarp(int s, int t);
-    int procuraNo(int u, int v);
-    void unweightedShortestPathGrafo();
-    void printGrafo();
 };
 
 

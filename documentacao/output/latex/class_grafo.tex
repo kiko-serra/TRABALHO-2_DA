@@ -19,44 +19,28 @@ int \mbox{\hyperlink{class_grafo_a1ef75b051c3f5908d6669b748ba8c0a7}{max\+Grupo}}
 \begin{DoxyCompactList}\small\item\em procura no grafo qual a capacidade maxima de transporte entre dois nos \end{DoxyCompactList}\item 
 vector$<$ int $>$ \mbox{\hyperlink{class_grafo_a3be8339b7fdbda45ec363d2ab7f2da9d}{get\+Caminho\+Grafo}} (int origem, int destino)
 \begin{DoxyCompactList}\small\item\em Com base no grafo procura o caminho seguido pelo grupo. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_grafo_afb16ec7057abf41b7f6237d541e814b5}\label{class_grafo_afb16ec7057abf41b7f6237d541e814b5}} 
-int {\bfseries min\+Transbordos} (int origem, int destino)
-\item 
-\mbox{\Hypertarget{class_grafo_a624afe98a539ebe946717d30a0ed0910}\label{class_grafo_a624afe98a539ebe946717d30a0ed0910}} 
-int {\bfseries max\+Grupo\+Multi\+Caminhos} (int origem, int destino)
-\item 
-\mbox{\Hypertarget{class_grafo_af1517b43caf66394b92efdb49823245a}\label{class_grafo_af1517b43caf66394b92efdb49823245a}} 
-list$<$ list$<$ int $>$ $>$ {\bfseries get\+Todos\+Caminhos} (int origem, int destino)
-\item 
 void \mbox{\hyperlink{class_grafo_ade0d7d8cafdb0d3bd47507fbbdb7d3c2}{unweighted\+Shortest\+Path\+Rede}} (\mbox{\hyperlink{class_grafo}{Grafo}} $\ast$rede)
 \begin{DoxyCompactList}\small\item\em procura um caminho (se existir) entre dois nos na rede residual \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_grafo}{Grafo}} \mbox{\hyperlink{class_grafo_ade5d8f20e08fda87097d999f01757576}{rede\+Residual}} (int origem, int destino)
 \begin{DoxyCompactList}\small\item\em cria uma rede residua tendo em conta as capacidades e fluxos das arestas do grafo \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_aabdf022eef4da80b841484bc159a176e}\label{class_grafo_aabdf022eef4da80b841484bc159a176e}} 
+void {\bfseries caminho\+Restante} (int origem, int destino, int $\ast$duracao\+Cam)
+\begin{DoxyCompactList}\small\item\em procura o resto de um caminho num grafo de acordo com o fluxo nas arestas \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_grafo_a2f303575bb80e2115098a071086f3c70}\label{class_grafo_a2f303575bb80e2115098a071086f3c70}} 
+int {\bfseries imprime\+Caminho2} (int origem, int destino)
+\begin{DoxyCompactList}\small\item\em procura o caminho mais curto entre dois nos \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_grafo_a4a2a9d8064b8b66d614146daa6d5f301}{determina\+Encam}} (int origem, int destino, int grupo)
 \begin{DoxyCompactList}\small\item\em determina se é possivel encontar um caminho para um grupo de transporte \end{DoxyCompactList}\item 
 vector$<$ int $>$ \mbox{\hyperlink{class_grafo_a2c066cc7f651dbaa7f8ddc91793b3a0c}{get\+Caminho\+Rede}} (\mbox{\hyperlink{class_grafo}{Grafo}} rede, int origem, int destino)
 \begin{DoxyCompactList}\small\item\em Procura o caminho na rede se houver. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grafo_a4389a44946c243109d06ef54e64a1268}{determina\+Encam\+Max}} (int origem, int destino)
+\begin{DoxyCompactList}\small\item\em procura o fluxo maximo e os respetivos caminhos \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_grafo_afabc26627a6d58442ecf1efd45afeedd}{earliest\+Start}} (int origem, int destino)
 \begin{DoxyCompactList}\small\item\em retorna a duração mínima da viagem do grupo \end{DoxyCompactList}\item 
 vector$<$ int $>$ \mbox{\hyperlink{class_grafo_a5b6034f94cca8e00970b4ccdebc37317}{get\+Caminho\+Grafo2}} (int origem, int destino)
 \begin{DoxyCompactList}\small\item\em procura o caminho com base nos precedentes \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_grafo_a28cfacde6e1275a92eee46f6b0ba0183}{latest\+Finish}} (int origem, int destino, int dur\+Min)
-\begin{DoxyCompactList}\small\item\em retorna a duracao máxima da viagem do grupo \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_grafo_af26057a3d788e3469688836cc50892d6}\label{class_grafo_af26057a3d788e3469688836cc50892d6}} 
-void {\bfseries bfs} (int v)
-\item 
-\mbox{\Hypertarget{class_grafo_a5aa30b7ec0b96bea31b690a2171d1167}\label{class_grafo_a5aa30b7ec0b96bea31b690a2171d1167}} 
-void {\bfseries edmunds\+Karp} (int s, int t)
-\item 
-\mbox{\Hypertarget{class_grafo_a62aef9cff3ed8d445d6bab2ed3fea0e1}\label{class_grafo_a62aef9cff3ed8d445d6bab2ed3fea0e1}} 
-int {\bfseries procura\+No} (int u, int v)
-\item 
-\mbox{\Hypertarget{class_grafo_af1f16a15dfe5ca86c16e9b33ce14aba4}\label{class_grafo_af1f16a15dfe5ca86c16e9b33ce14aba4}} 
-void {\bfseries unweighted\+Shortest\+Path\+Grafo} ()
-\item 
-\mbox{\Hypertarget{class_grafo_aaf3abbb5f4e38b10b063605c765a2a7a}\label{class_grafo_aaf3abbb5f4e38b10b063605c765a2a7a}} 
-void {\bfseries print\+Grafo} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em retorna a duracao máxima da viagem do grupo \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -109,6 +93,23 @@ true se houver caminhos para transportar o grupo ate ao no de destino
 
 false se não houver caminhos para transportar o grupo ate ao no de destino 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_grafo_a4389a44946c243109d06ef54e64a1268}\label{class_grafo_a4389a44946c243109d06ef54e64a1268}} 
+\index{Grafo@{Grafo}!determinaEncamMax@{determinaEncamMax}}
+\index{determinaEncamMax@{determinaEncamMax}!Grafo@{Grafo}}
+\doxysubsubsection{\texorpdfstring{determinaEncamMax()}{determinaEncamMax()}}
+{\footnotesize\ttfamily int Grafo\+::determina\+Encam\+Max (\begin{DoxyParamCaption}\item[{int}]{origem,  }\item[{int}]{destino }\end{DoxyParamCaption})}
+
+
+
+procura o fluxo maximo e os respetivos caminhos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & no de origem do grafo \\
+\hline
+{\em destino} & no de destino do grafo \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_grafo_afabc26627a6d58442ecf1efd45afeedd}\label{class_grafo_afabc26627a6d58442ecf1efd45afeedd}} 
 \index{Grafo@{Grafo}!earliestStart@{earliestStart}}
 \index{earliestStart@{earliestStart}!Grafo@{Grafo}}
@@ -224,7 +225,7 @@ retorna a duracao máxima da viagem do grupo
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int tempo de espera entre a duração maxima e a duração mínima 
+a duraçãõ mínima da viagem pois não foi acabado 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_grafo_a1ef75b051c3f5908d6669b748ba8c0a7}\label{class_grafo_a1ef75b051c3f5908d6669b748ba8c0a7}} 
 \index{Grafo@{Grafo}!maxGrupo@{maxGrupo}}

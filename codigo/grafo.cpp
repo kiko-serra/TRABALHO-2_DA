@@ -9,7 +9,7 @@ using namespace std;
 
 #define INF INT_MAX
 
-Grafo::Grafo(int num, bool dir) : inicial_(1), num_nos_(num), nos_(num + 1), hasDir_(dir) {}
+Grafo::Grafo(int num, bool dir) :  num_nos_(num), nos_(num + 1) {}
 
 int Grafo::getNumNos() {
     return num_nos_;
@@ -86,66 +86,7 @@ vector<int> Grafo::getCaminhoGrafo(int origem, int destino) {
 }
 
 //1.2
-int Grafo::minTransbordos(int origem, int destino){
 
-    inicializaNos();
-
-    MinHeap<int, int> heap(num_nos_, -5);
-    //if -5 -> not found
-    for (int i = 1; i <=num_nos_; i++) {
-        heap.insert(i, nos_[i].dist_);
-    }
-
-    while(heap.getSize()!=0){
-        int v = heap.removeMin();
-        for(auto &w : nos_[v].adj_){
-            if(nos_[v].dist_ + 1 < nos_[w.destino_].dist_ && heap.hasKey(w.destino_)){
-                nos_[w.destino_].dist_=nos_[v].dist_ + 1;
-                nos_[w.destino_].anterior_ = v;
-                heap.decreaseKey(w.destino_,nos_[v].dist_ +1 );
-            }
-        }
-    }
-    if(nos_[destino].dist_ == INF) return -1;
-    return nos_[destino].dist_ -1;
-}
-
-int Grafo::maxGrupoMultiCaminhos(int origem, int destino) {
-    for(auto &w : nos_){
-        w.cap_=0;
-        w.anterior_=-1;
-    }
-    nos_[origem].anterior_=-1;
-    nos_[origem].cap_=INF;
-
-    MaxHeap<int, int> heap(num_nos_, -5);
-    //if -5 -> not found
-    for (int i = 1; i <=num_nos_; i++) {
-        heap.insert(i, nos_[i].dist_);
-    }
-
-    while(heap.getSize() != 0){
-        int v = heap.removeMax();
-        nos_[v].visitado_=true;
-        for(auto &w : nos_[v].adj_){
-            if(heap.hasKey(w.destino_)){
-                if (min(nos_[v].cap_, w.capacidade_) == nos_[w.destino_].cap_){
-                    nos_[w.destino_].vec_pred_.push_back(v);
-                }else if(min(nos_[v].cap_, w.capacidade_) > nos_[w.destino_].cap_){
-                    nos_[w.destino_].vec_pred_.clear();
-                    nos_[w.destino_].vec_pred_.push_back(v);
-                    nos_[w.destino_].cap_=min(nos_[v].cap_, w.capacidade_);
-                    heap.increaseKey(w.destino_,nos_[w.destino_].cap_);
-                }
-            }
-        }
-    }
-    if(nos_[destino].cap_ == INF) return -1;
-    printCaminho(getCaminhoGrafo(1, num_nos_ - 1));
-    return nos_[destino].dist_;
-}
-
-//list<list<int>> Grafo::getTodosCaminhos(){}
 
 //2
 void Grafo::unweightedShortestPathRede(Grafo *rede){
@@ -203,12 +144,12 @@ int Grafo::imprimeCaminho2(int origem, int destino) {
     while(somaFluxo > 0){
         for(auto &w: nos_[origem].adj_){
             if(w.fluxo_ != 0){
-                cout << endl << w.fluxo_ << " pessoas foram por este caminho: " << endl;
+                cout <<endl<<  w.fluxo_ << " pessoas foram por este caminho: " << endl;
                 cout << "->  " << origem << " ->  " << w.destino_;
                 somaFluxo -= w.fluxo_;
                 duracaoCam += w.duracao_;
                 w.fluxo_=0;
-                caminhoRestante(w.destino_, destino, &duracaoCam);
+                caminhoRestante(w.destino_, destino,  &duracaoCam);
             }
             if(maiorCaminho < duracaoCam){
                 maiorCaminho = duracaoCam;
@@ -222,7 +163,7 @@ int Grafo::imprimeCaminho2(int origem, int destino) {
 
 void Grafo::caminhoRestante(int origem, int destino, int *duracaoCam) {
     if(origem == destino){
-        cout << "   Duracao: " << (*duracaoCam) << endl;
+        cout << endl<<"Duracao: " << (*duracaoCam) << endl << endl;
         return;
     }
 
@@ -268,6 +209,7 @@ bool Grafo::determinaEncam(int origem, int destino, int grupo) {
         caminho = getCaminhoRede(rede, origem, destino);
         grupo-=capResidual;
     }
+    imprimeCaminho2(origem, destino);
     return true;
 }
 
@@ -298,7 +240,12 @@ int Grafo::determinaEncamMax(int origem, int destino) {
         caminho = getCaminhoRede(rede, origem, destino);
 
     }
-    return nos_[origem].fluxo_;
+    int fluxoMax = 0;
+    for(auto &w: nos_[origem].adj_)
+        fluxoMax += w.fluxo_;
+    
+    imprimeCaminho2(origem, destino);
+    return fluxoMax;
 }
 
 vector<int> Grafo::getCaminhoRede(Grafo rede, int origem, int destino) {
@@ -312,7 +259,6 @@ vector<int> Grafo::getCaminhoRede(Grafo rede, int origem, int destino) {
     reverse(caminho.begin(), caminho.end());
     return caminho;
 }
-
 
 
 //2.4
@@ -391,7 +337,7 @@ int Grafo::latestFinish(int origem, int destino, int durMin){
             Gt.addAresta(w.destino_, i, w.capacidade_, w.duracao_);
         }
     }
-
+    int v;
     stack<int> pilha;
     for(int i = 1; i<= num_nos_; i++){
         if(nos_[i].grauS_ == 0){
@@ -405,6 +351,7 @@ int Grafo::latestFinish(int origem, int destino, int durMin){
         for(auto &w : Gt.nos_[v].adj_){
             if(nos_[w.destino_].lf_ > nos_[v].lf_ - w.duracao_){
                 nos_[w.destino_].lf_ = nos_[v].lf_ - w.duracao_;
+                nos_[w.destino_].precede_ = v;
             }
             nos_[w.destino_].grauS_--;
             if(nos_[w.destino_].grauS_ == 0){
@@ -412,90 +359,7 @@ int Grafo::latestFinish(int origem, int destino, int durMin){
             }
         }
     }
-    printCaminho(getCaminhoGrafo2(num_nos_, 1));
-    return 0;
+    return durMin;
 }
 
-//nao usado
-void Grafo::edmundsKarp(int s, int t) {
-    int fluxo_max = 0;
-    while (true) {
-        bfs(1);
-        if (nos_[t].dist_ == INF) {
-            break;
-        }
-        int path_flow = INF;
-        for (int v = t; v != s; v = nos_[v].anterior_) {
-            path_flow = min(path_flow, nos_[nos_[v].anterior_].adj_[procuraNo(nos_[v].anterior_, v)].capacidade_);
-        }
-        fluxo_max += path_flow;
-        for (int v = t; v != s; v = nos_[v].anterior_) {
-            int u = nos_[v].anterior_;
-            int w = procuraNo(u, v);
-            nos_[u].adj_[w].capacidade_ -= path_flow;
-            nos_[v].adj_[w].capacidade_ += path_flow;
-        }
-    }
-    cout << "Fluxo máximo: " << fluxo_max << endl;
-}
 
-void Grafo::bfs(int v) {
-    for (int i = 1; i <= num_nos_; i++) {
-        nos_[i].dist_ = INF;
-        nos_[i].anterior_ = -1;
-        nos_[i].visitado_ = false;
-    }
-    nos_[v].dist_ = 0;
-    queue<int> fila;
-    fila.push(v);
-    while (!fila.empty()) {
-        int u = fila.front();
-        fila.pop();
-        for (auto &w : nos_[u].adj_) {
-            if (!nos_[w.destino_].visitado_) {
-                nos_[w.destino_].dist_ = nos_[u].dist_ + 1;
-                nos_[w.destino_].anterior_ = u;
-                fila.push(w.destino_);
-                nos_[w.destino_].visitado_ = true;
-            }
-        }
-    }
-}
-
-int Grafo::procuraNo(int u, int v) {
-    if (u < 0) return -1;
-    for (size_t i = 1; i <= nos_[u].adj_.size(); i++) {
-        if (nos_[u].adj_[i].destino_ == v) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-void Grafo::printGrafo() {
-    for (int i = 1; i <=num_nos_; i++) {
-        cout << "No " << i << ": ";
-        for (auto &aresta : nos_[i].adj_) {
-            cout << "(" << aresta.destino_ << "," << aresta.capacidade_ << "," << aresta.duracao_ << ") ";
-        }
-        cout << endl;
-    }
-}
-
-void Grafo::unweightedShortestPathGrafo() {
-    inicializaNos();
-    queue<int> fila;
-    fila.push(1);
-    while (!fila.empty()) {
-        int u = fila.front();
-        fila.pop();
-        for (auto &w : nos_[u].adj_) {
-            if (!nos_[w.destino_].visitado_) {
-                nos_[w.destino_].dist_ = nos_[u].dist_ + 1;
-                nos_[w.destino_].anterior_ = u;
-                fila.push(w.destino_);
-                nos_[w.destino_].visitado_ = true;
-            }
-        }
-    }
-}

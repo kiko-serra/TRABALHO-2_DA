@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['maxgrupo_0',['maxGrupo',['../class_grafo.html#a1ef75b051c3f5908d6669b748ba8c0a7',1,'Grafo']]],
-  ['maxheap_1',['MaxHeap',['../class_max_heap.html',1,'']]],
-  ['menu_2',['Menu',['../class_menu.html',1,'']]],
-  ['minheap_3',['MinHeap',['../class_min_heap.html',1,'']]]
+  ['latestfinish_0',['latestFinish',['../class_grafo.html#a28cfacde6e1275a92eee46f6b0ba0183',1,'Grafo']]],
+  ['load_1',['load',['../class_menu.html#a5431de987e53e063870f7719ee9090d8',1,'Menu']]]
 ];
