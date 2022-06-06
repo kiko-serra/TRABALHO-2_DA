@@ -191,7 +191,53 @@ Grafo Grafo::redeResidual(int origem, int destino) {
     return rede;
 }
 
-//2.1 - 2.2 - 2.3
+int Grafo::imprimeCaminho2(int origem, int destino) {
+
+    int somaFluxo = 0, duracaoCam = 0, maiorCaminho = 0;
+    for(auto &w : nos_[origem].adj_){
+        if(w.fluxo_ > 0){
+            somaFluxo += w.fluxo_;
+        }
+    }
+
+    while(somaFluxo > 0){
+        for(auto &w: nos_[origem].adj_){
+            if(w.fluxo_ != 0){
+                cout << endl << w.fluxo_ << " pessoas foram por este caminho: " << endl;
+                cout << "->  " << origem << " ->  " << w.destino_;
+                somaFluxo -= w.fluxo_;
+                duracaoCam += w.duracao_;
+                w.fluxo_=0;
+                caminhoRestante(w.destino_, destino, &duracaoCam);
+            }
+            if(maiorCaminho < duracaoCam){
+                maiorCaminho = duracaoCam;
+            }
+            duracaoCam = 0;
+        }
+    }
+
+    return maiorCaminho;
+}
+
+void Grafo::caminhoRestante(int origem, int destino, int *duracaoCam) {
+    if(origem == destino){
+        cout << "   Duracao: " << (*duracaoCam) << endl;
+        return;
+    }
+
+    for(auto &w: nos_[origem].adj_){
+        if(w.fluxo_ > 0){
+            cout << " ->  " << w.destino_;
+            (*duracaoCam) += w.duracao_;
+            w.fluxo_=0;
+            caminhoRestante(w.destino_, destino, duracaoCam);
+            break;
+        }
+    }
+}
+
+//2.1 - 2.2 
 bool Grafo::determinaEncam(int origem, int destino, int grupo) {
     int capResidual = INT32_MAX;
     Grafo rede = Grafo::redeResidual(origem, destino);
@@ -223,6 +269,36 @@ bool Grafo::determinaEncam(int origem, int destino, int grupo) {
         grupo-=capResidual;
     }
     return true;
+}
+
+//2.3
+int Grafo::determinaEncamMax(int origem, int destino) {
+    int capResidual = INT32_MAX;
+    Grafo rede = Grafo::redeResidual(origem, destino);
+    unweightedShortestPathRede(&rede);
+    vector<int> caminho = Grafo::getCaminhoRede(rede,origem, destino);
+
+    while(rede.nos_[destino].visitado_){
+        for(int i = 0; i<caminho.size(); i++){
+            for(auto &w : rede.nos_[caminho[i]].adj_){
+                if(w.destino_ == caminho[i+1]){
+                    capResidual=min(w.residual_, capResidual);
+                }
+            }
+        }
+        for(int i = 0; i<caminho.size(); i++){
+            for(auto &w : nos_[caminho[i]].adj_){
+                if(w.destino_ == caminho[i+1]){
+                    w.fluxo_ += capResidual;
+                }
+            }
+        }
+        rede = redeResidual(origem, destino);
+        unweightedShortestPathRede(&rede);
+        caminho = getCaminhoRede(rede, origem, destino);
+
+    }
+    return nos_[origem].fluxo_;
 }
 
 vector<int> Grafo::getCaminhoRede(Grafo rede, int origem, int destino) {

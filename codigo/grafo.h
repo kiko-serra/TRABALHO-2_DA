@@ -130,7 +130,17 @@ public:
      */
     Grafo redeResidual(int origem, int destino);
 
-//------------------2.1-2.2-2.3----------------
+    /**
+     * @brief procura o resto de um caminho num grafo de acordo com o fluxo nas arestas
+     */
+    void caminhoRestante(int origem, int destino, int *duracaoCam);
+
+    /**
+     * @brief procura o caminho mais curto entre dois nos
+    */
+    int imprimeCaminho2(int origem, int destino);
+
+//------------------2.1-2.2-----------------
     /**
      * @brief determina se é possivel encontar um caminho para um grupo de transporte
      * 
@@ -152,7 +162,14 @@ public:
      */
     vector<int> getCaminhoRede(Grafo rede, int origem, int destino);
 
+//------------------2.3----------------
 
+    /**
+     * @brief procura o caminho mais curto entre dois nos
+     * 
+     * @param origem no de origem do grafo
+    */
+    int determinaEncamMax(int origem, int destino);
 //--------------------2.4--------------------
 
     /**

@@ -123,7 +123,7 @@ void Menu::ex2_3(){
     int grupo=0;
     do{
         grupo++;
-    }while(grafo.determinaEncam(1, grafo.getNumNos(), grupo));
+    }while(grafo.determinaEncamMax(1, grafo.getNumNos()));
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
     cout << "Cenario 2.3: O tamanho maximo para o grupo e " << grupo << endl;
@@ -156,7 +156,7 @@ void Menu::ex2_5(){
     auto stop = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
     cout <<"Cenario 2.5: " << lf <<" e o tempo que demora ao grupo para se juntar no destino"<< endl;
-     cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
+    cout << endl << "Duracao:   " << duration.count() << " microsegundos" << endl;
 }   
 void Menu::printCenarios(){
     cout << "Cenario 1.1 primir 1: " << endl;
